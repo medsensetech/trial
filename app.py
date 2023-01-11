@@ -3,6 +3,14 @@ import pandas as pd
 
 if __name__ == "__main__":
     # setting header, description and citation
+    
+    
+    st.sidebar.markdown('''
+    # Sections
+    - [Evidence Explorer](#section-1)
+    - [Concept Builder](#section-2)
+    ''', unsafe_allow_html=True)
+
     st.set_page_config(page_title="Molecule icons")
     st.header('''
     Evidence Explorer
@@ -86,4 +94,329 @@ rates and outcomes if you were to design your program similarly.
         st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
         st.write(output)
 
+        
+        
+     st.header("Concept Builder")
+    
+     st.write("Based on selection(s) of program strategy, for your program objective(s) might be recommended below. For strategy around either un-met need or barrier or existing-programs please select any relevant objectives. Also, complete the additional felds below, then press next, to review the potential opportunity for your program concept.")
+        
+
+    tag = []
+    print(program_strategy)
+
+    for i in program_strategy:
+        if i in ("Supporting quality use of medicines"):
+            tag.append("Med")
+        elif i in ("Providing patient support at-par with industry standard"):
+            tag.append("Low")
+        elif i in ("Providing patient support that exceeds industry standard"):
+            tag.append("High")
+        elif i in ("Create a new program to be consistent with current enterprise programs") or i in ("Expansion of existing program"):
+            tag.append("Existing program")
+        elif i in ("Address an unmet patient need or barrier"):
+            tag.append("Unmet Need")
+        else:
+            tag.append("Other")
+    #print(tag)
+
+    #Step 2: For each program objective, select unique Matched Services (Matrix)
+
+    program_objective = []
+
+    for i in tag:
+        if i in "High":
+            program_objective.append("Support adherence and persistence")
+            program_objective.append("Support complex patient/treatment journey")
+            program_objective.append("Best end-to-end experience")
+        elif i in "Med":
+            program_objective.append("Support end-to-end experience")
+            program_objective.append("Support including disease and medicine education")
+            program_objective.append("Cross-functional including AHP support")
+        elif i in "Low":
+            program_objective.append("Disease and medicine education")
+        elif i in "Unmet Need":
+            program_objective.append("Emotional/psycho-social support")
+            program_objective.append("Medication access/financial support")
+            program_objective.append("Support carer")
+            program_objective.append("HCP support")
+        else:
+            program_objective.append("Other")
+
+    #print(program_objective)
+    program_objective = remove_dup(program_objective)
+
+    progobj = pd.DataFrame(program_objective)
+    progobj.columns = ['Program Objective']
+
+    matched_service = []
+
+    for i in program_objective:
+
+        if i in 'Support adherence and persistence':
+            matched_service.append('Patient Education')
+            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Medicine Usage Support")
+            matched_service.append("Medicine Supplies/Logistics")
+            matched_service.append("Motivation-Confidence")
+        elif i in 'Support complex patient/treatment journey':
+            matched_service.append('Patient Education')
+            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Medicine Usage Support")
+            matched_service.append("Medicine Supplies/Logistics")
+            matched_service.append("Effective HCP Appointments")
+            matched_service.append("Motivation-Confidence")
+        elif i in 'Best end-to-end experience':
+            matched_service.append('Patient Education')
+            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Medicine Usage Support")
+            matched_service.append("Medicine Supplies/Logistics")
+            matched_service.append("Effective HCP Appointments")
+            matched_service.append("Motivation-Confidence")
+            matched_service.append("Psychosocial-Emotional")
+        elif i in 'Support end-to-end experience':
+            matched_service.append('Patient Education')
+            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Medicine Usage Support")
+            matched_service.append("Effective HCP Appointments")
+            matched_service.append("Motivation-Confidence")
+        elif i in 'Support including disease and medicine education':
+            matched_service.append('Patient Education')
+            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Medicine Usage Support")
+        elif i in 'Disease and medicine education':
+            matched_service.append('Patient Education')
+        elif i in 'Emotional/psycho-social support':
+            matched_service.append("Motivation-Confidence")
+            matched_service.append("Psychosocial-Emotional")
+        elif i in 'Medication access/financial support':
+            matched_service.append("Financial")
+        elif i in 'Support carer':
+            matched_service.append('Patient Education')
+            matched_service.append("Medicine Usage Support")
+            matched_service.append("Carer Enablement")
+        elif i in 'Cross-functional including AHP support':
+            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Effective HCP Appointments")
+        elif i in 'HCP support':
+            matched_service.append("HCP-Needs")
+
+    matched_service = remove_dup(matched_service)
+
+
+    #print(matched_service)
+
+
+
+
+    #Step 3: For each matched service, display patient needs 
+    pt_needs = []
+
+    for i in matched_service:
+        if i in "Patient Education":
+            pt_needs.append("Disease education")
+            pt_needs.append("Treatment education")
+            pt_needs.append("Side effects education")
+        elif i in "Carer Enablement":
+            pt_needs.append("Carer enablement")
+        elif i in "Effective HCP Appointments":
+            pt_needs.append("Effective HCP appointments")
+            pt_needs.append("Access to HCPs")
+            pt_needs.append("Logistics (e.g. transport)")
+        elif i in "Financial":
+            pt_needs.append("Financial")
+        elif i in "Medicine Supplies/Logistics":
+            pt_needs.append("Medicine logistics")
+            pt_needs.append("ePharmacy")
+            pt_needs.append("Convenience")
+        elif i in "Medicine Usage Support":
+            pt_needs.append("Reminders (medication, appointments, tests)")
+            pt_needs.append("Medicine routine")
+            pt_needs.append("Monitoring support")
+            pt_needs.append("Access to diagnostics/tests/exams")
+            pt_needs.append("Supports treatment initiation")
+            pt_needs.append("Self-administration")
+        elif i in "Motivation-Confidence":
+            pt_needs.append("Motivation")
+            pt_needs.append("Supports treatment maintenance / persistence")
+        elif i in "Psychosocial-Emotional":
+            pt_needs.append("Psychosocial")
+            pt_needs.append("Peer to peer networking/community")
+        elif i in "Sideeffects/Comorbitity Support":
+            pt_needs.append("Co-morbidities/co-meds/medication burden")
+    pt_needs = remove_dup(pt_needs)
+    #print(pt_needs)
+    ptneeds = pd.DataFrame(pt_needs)
+    ptneeds.columns = ['Patient Needs']
+
+    #Step 4: For each matched service, display HCP needs
+    #print(matched_service)
+    hcp_needs = []
+    for i in matched_service:
+        if i in "HCP-Needs":
+            hcp_needs.append("Administrative burden")
+            hcp_needs.append("HCP training")
+            hcp_needs.append("Patient support feedback loop")
+        elif i in "Medicine Usage Support":
+            hcp_needs.append("Complex therapy management")
+        elif i in "Patient Education":
+            hcp_needs.append("Time poor to deliver patient education/support")
+        elif i in "Effective HCP Appointments":
+            hcp_needs.append("Multiple stakeholders in patient journey")
+        elif i in "Sideeffects/Comorbitity Support":
+            hcp_needs.append("Reassurance of care/support outside of their care")
+        elif i in "Psychosocial-Emotional":
+            hcp_needs.append("Patient support feedback loop")
+        elif i in "HCP-Needs":
+            hcp_needs.append("HCP training")
+        else:
+            hcp_needs.append("Others")
+
+
+    hcp_needs = remove_dup(hcp_needs)
+    hcp = pd.DataFrame(hcp_needs)
+    #print(hcp_needs)
+    hcp.columns = ['HCP Needs']
+    #Step 5: Unique values of sub-services and channels 
+
+    matched_serv1 = remove_dup(matched_service)
+    matched_serv = pd.DataFrame(matched_serv1)
+    matched_serv.columns = ['Services']
+    #print(matched_serv)
+
+    services = remove_dup(results['Services'])
+    serv = pd.DataFrame(services)
+    serv.columns = ['Services']
+
+    temp = results[results.Services.isin(matched_serv1)]
+    print(temp)
+
+    sub_services = temp['Sub Services']
+    #print(sub_services)
+
+    subserv = pd.DataFrame(sub_services)
+    subserv.columns = ['Sub Services']
+    subserv = subserv.drop_duplicates()
+    #print(sub_services)
+
+    channels = temp['Channel']
+    #print(channels)
+    chnls = pd.DataFrame(channels)
+    chnls.columns = ['Channels']
+    chnls = chnls.drop_duplicates()
+
+    #Outcome Calculator
+
+
+    sr = result['Sr']
+
+    services = serv['Services']
+    channels = chnls['Channels']
+
+    master = master[master.Sr.isin(sr)]
+
+
+    sr = sr.head(1)
+    master = master[master.Sr.isin(sr)]
+
+    closest_match = master[master.Sr.isin(sr)]
+
+    services_match = closest_match[closest_match.Service.isin(services)]
+
+    channels_match = services_match[services_match.Channel.isin(channels)]
+    outcome = channels_match['MeasureBenefit'].max()
+    closest_outcome = outcome/100
+
+
+    match = channels_match[channels_match.MeasureBenefit.isin([outcome])]
+
+    intrinsic_scaling = 1
+
+    result_services = results['Services'].unique()
+    result_channels = results['Channel'].unique()
+
+    #print(result_channels)
+
+    def scale(match_services, selection_services, match_channel, selection_channel, outcome):
+        if len(selection_services) > len(match_services):
+            n = len(selection_services) - len(match_services)
+            service_scaling = (1.1)**n
+        elif len(selection_services) == len(match_services):
+            service_scaling = 1
+        else:
+            n = len(match_services) - len(selection_services)
+            service_scaling = (1.1)/n
+        print(service_scaling)
+        new_outcome = outcome*service_scaling
+
+        selection_channel_factors = []
+        for i in selection_channel:
+            if i in "Inperson":
+                selection_channel_factors.append(1)
+            elif i in "Telephone (clinical)":
+                selection_channel_factors.append(0.8)
+            elif i in "Welcome Pack":
+                selection_channel_factors.append(0.5)
+            elif i in "Website":
+                selection_channel_factors.append(0.1)
+            elif i in "Email/SMS/Mail":
+                selection_channel_factors.append(0.2)
+            elif i in "Telephone (non-clinical)":
+                selection_channel_factors.append(0.5)
+            elif i in "App":
+                selection_channel_factors.append(0.1)
+            elif i in "Partner organisations":
+                selection_channel_factors.append(0.2)
+            elif i in "Third-party tool/software":
+                selection_channel_factors.append(0.2)
+            elif i in "Other (specify)":
+                selection_channel_factors.append(0.4)
+            else:
+                selection_channel_factors.append(1)
+
+        match_channel_factors = []
+        for i in match_channel:
+            if i in "Inperson":
+                match_channel_factors.append(1)
+            elif i in "Telephone (clinical)":
+                match_channel_factors.append(0.8)
+            elif i in "Welcome Pack":
+                match_channel_factors.append(0.5)
+            elif i in "Website":
+                match_channel_factors.append(0.1)
+            elif i in "Email/SMS/Mail":
+                match_channel_factors.append(0.2)
+            elif i in "Telephone (non-clinical)":
+                match_channel_factors.append(0.5)
+            elif i in "App":
+                match_channel_factors.append(0.1)
+            elif i in "Partner organisations":
+                match_channel_factors.append(0.2)
+            elif i in "Third-party tool/software":
+                match_channel_factors.append(0.2)
+            elif i in "Other (specify)":
+                match_channel_factors.append(0.4)
+            else:
+                match_channel_factors.append(1)
+        print(selection_channel_factors)
+        print(match_channel_factors)
+        channel_scaling = max(selection_channel_factors)/max(match_channel_factors)
+        print()
+        print(channel_scaling)
+
+        new_outcome = new_outcome*channel_scaling
+
+        if new_outcome >= 2*outcome:
+            new_outcome = 2*outcome
+        elif new_outcome <= 0.5*outcome:
+            new_outcome = 0.5*outcome
+        print(new_outcome)
+        return new_outcome
+
+
+    recommendation_channels = channels_match['Channel']
+
+    display_outcome = scale(matched_serv, serv, chnls, result_channels, closest_outcome)
+
+        
+     
 
