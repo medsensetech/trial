@@ -65,8 +65,6 @@ rates and outcomes if you were to design your program similarly.
 
 
     result = firsts.head(10)
-
-    results = pd.DataFrame(output)
     
     output = result.drop('Sr', axis=1)
     output = output.drop('Sum', axis=1)
