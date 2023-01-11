@@ -28,62 +28,58 @@ rates and outcomes if you were to design your program similarly.
         p_stakeholders = st.selectbox('Program Stakeholders', ['GP','Specialist','Patient','Patient-Carer','Nurse','Pharmacist','AHPs','Other clinical staff, specify','Program-management','Partner organisations','Advocacy group','Other specify'], key=5)
         p_strategy = st.selectbox('Program Strategy', ['Supporting quality use of medicines','Providing patient support at-par with industry standard','Providing patient support that exceeds industry standard','Create a new program to be consistent with current enterprise programs','Address an unmet patient need or barrier','Expansion of existing program','Other specify'], key=6)
         roa = st.selectbox('Route of Administration', ['ID','IV','IVI','NA','Oral','Inhale','Topical','Other specify'], key=7)        
-        submit_button = st.form_submit_button('View Results')
-    
+        #references = pd.read_csv('dhairyavayada/trial/dataframe3.csv')
+        references['Sum'] = pd.Series(dtype='int')
+        # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
+        for i, row in references.iterrows():
+            sum_roa = 0
+            sum_drug = 0
+            sum_cond = 0
+            sum_th = 0
 
-    #references = pd.read_csv('dhairyavayada/trial/dataframe3.csv')
-    references['Sum'] = pd.Series(dtype='int')
+            if str(references.loc[i, 'Route of Administration']) in str(roa):
+                sum_roa = 8
+            if str(references.loc[i, 'Molecule']) in str(drug):
+                sum_drug = 4
+            if str(references.loc[i, 'Condition']) in str(cond):
+                sum_cond = 2
+            if str(references.loc[i, 'Therapy Area']) in th_area:
+                sum_th = 1
 
-    # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
-
-    for i, row in references.iterrows():
-        sum_roa = 0
-        sum_drug = 0
-        sum_cond = 0
-        sum_th = 0
-
-        if str(references.loc[i, 'Route of Administration']) in str(roa):
-            sum_roa = 8
-        if str(references.loc[i, 'Molecule']) in str(drug):
-            sum_drug = 4
-        if str(references.loc[i, 'Condition']) in str(cond):
-            sum_cond = 2
-        if str(references.loc[i, 'Therapy Area']) in th_area:
-            sum_th = 1
-
-        references.loc[i, 'Sum'] = sum_roa + sum_drug + sum_cond + sum_th
+            references.loc[i, 'Sum'] = sum_roa + sum_drug + sum_cond + sum_th
 
 
-    sorted_df = references.sort_values(by=['Sum', 'Participants', 'Adoption', 'Program benefit vs non-program'], ascending=False)
+        sorted_df = references.sort_values(by=['Sum', 'Participants', 'Adoption', 'Program benefit vs non-program'], ascending=False)
 
 
-    firsts = sorted_df.groupby('Sr', as_index=False).first()
+        firsts = sorted_df.groupby('Sr', as_index=False).first()
 
 
-    firsts = firsts.sort_values(by=['Sum', 'Participants'], ascending=False)
+        firsts = firsts.sort_values(by=['Sum', 'Participants'], ascending=False)
 
 
 
-    result = firsts.head(10)
-    
-    output = result.drop('Sr', axis=1)
-    output = output.drop('Sum', axis=1)
+        result = firsts.head(10)
 
-    no_participants = results['Participants'].sum()
-    no_programs = results['Condition'].count()
+        output = result.drop('Sr', axis=1)
+        output = output.drop('Sum', axis=1)
 
-    adoption_rate = results['Adoption'].max()/100
+        no_participants = results['Participants'].sum()
+        no_programs = results['Condition'].count()
 
-    program_measure = results['Program Measure']
+        adoption_rate = results['Adoption'].max()/100
+
+        program_measure = results['Program Measure']
 
 
-    prem = results[results['Program Measure'].str.contains('PREM')]
-    non_prem = results[~results['Program Measure'].str.contains('PREM')]
-    patient_x = prem['Program benefit vs non-program'].max()/100
-    outcome = non_prem['Program benefit vs non-program'].max()/100
+        prem = results[results['Program Measure'].str.contains('PREM')]
+        non_prem = results[~results['Program Measure'].str.contains('PREM')]
+        patient_x = prem['Program benefit vs non-program'].max()/100
+        outcome = non_prem['Program benefit vs non-program'].max()/100
 
     def remove_dup(x):
         return list(dict.fromkeys(x))
+    submit_button = st.form_submit_button('View Results')
 
     st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
     st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
