@@ -23,7 +23,7 @@ rates and outcomes if you were to design your program similarly.
         submit_button = st.form_submit_button('View Results')
     
 
-    references = pd.DataFrame(dataframe3)
+    references = pd.DataFrame('dataframe3.csv')
     references['Sum'] = pd.Series(dtype='int')
 
     # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
