@@ -23,6 +23,6 @@ rates and outcomes if you were to design your program similarly.
         st.selectbox('Route of Administration', ['Vanilla', 'Chocolate'], key=1)        
         submit_button = st.form_submit_button('Submit 1')
 
-form = st.form(key='my_form')
-form.text_input(label='Enter some text')
-submit_button = form.form_submit_button(label='Submit')
+    form = st.form(key='my_form')
+    form.text_input(label='Enter some text')
+    submit_button = form.form_submit_button(label='Submit')
