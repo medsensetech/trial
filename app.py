@@ -100,7 +100,7 @@ rates and outcomes if you were to design your program similarly.
         
 
     tag = []
-    print(program_strategy)
+    #print(program_strategy)
 
     for i in program_strategy:
         if i in ("Supporting quality use of medicines"):
