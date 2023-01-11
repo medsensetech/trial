@@ -77,12 +77,13 @@ rates and outcomes if you were to design your program similarly.
         return list(dict.fromkeys(x))
     if submit_button:
         st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
-        st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
-        st.write(output)
         st.write("Best case (from the top 10 programs that most closely match your selection criteria)")
         col1, col2, col3 = st.columns(3)
         col1.metric("Adoption Rate (%)", adoption_rate)
         col2.metric("Patient Experience (%)", patient_x)
         col3.metric("Outcome (%)", outcome)
+
+        st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
+        st.write(output)
 
 
