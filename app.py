@@ -26,8 +26,9 @@ rates and outcomes if you were to design your program similarly.
         p_strategy = st.selectbox('Program Strategy', ['Supporting quality use of medicines','Providing patient support at-par with industry standard','Providing patient support that exceeds industry standard','Create a new program to be consistent with current enterprise programs','Address an unmet patient need or barrier','Expansion of existing program','Other specify'], key=6)
         roa = st.selectbox('Route of Administration', ['ID','IV','IVI','NA','Oral','Inhale','Topical','Other specify'], key=7)        
         #references = pd.read_csv('dhairyavayada/trial/dataframe3.csv')
-        references['Sum'] = pd.Series(dtype='int')
         submit_button = st.form_submit_button('View Results')
+    if submit_button:
+        references['Sum'] = pd.Series(dtype='int')
         # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
         for i, row in references.iterrows():
             sum_roa = 0
@@ -76,6 +77,6 @@ rates and outcomes if you were to design your program similarly.
     def remove_dup(x):
         return list(dict.fromkeys(x))
 
-    st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
-    st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
+        st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
+        st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
 
