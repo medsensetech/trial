@@ -18,7 +18,7 @@ rates and outcomes if you were to design your program similarly.
     if uploaded_file is not None:
         # Can be used wherever a "file-like" object is accepted:
         references = pd.read_csv(uploaded_file)
-        st.write(dataframe)
+        st.write(references)
 
    
     with st.form('Form1'):
