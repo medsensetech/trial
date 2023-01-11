@@ -6,7 +6,7 @@ if __name__ == "__main__":
     
     
     st.sidebar.markdown('''
-    # Sections
+    # EH MVP v2.0
     - [Evidence Explorer](#section-1)
     - [Concept Builder](#section-2)
     ''', unsafe_allow_html=True)
@@ -102,7 +102,7 @@ rates and outcomes if you were to design your program similarly.
     tag = []
     #print(program_strategy)
 
-    for i in program_strategy:
+    for i in p_strategy:
         if i in ("Supporting quality use of medicines"):
             tag.append("Med")
         elif i in ("Providing patient support at-par with industry standard"):
@@ -149,7 +149,6 @@ rates and outcomes if you were to design your program similarly.
     matched_service = []
 
     for i in program_objective:
-
         if i in 'Support adherence and persistence':
             matched_service.append('Patient Education')
             matched_service.append("Sideeffects/Comorbitity Support")
