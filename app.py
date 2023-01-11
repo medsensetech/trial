@@ -95,10 +95,9 @@ rates and outcomes if you were to design your program similarly.
         st.write(output)
 
         
-        
-     st.header("Concept Builder")
+    st.header("Concept Builder")
     
-     st.write("Based on selection(s) of program strategy, for your program objective(s) might be recommended below. For strategy around either un-met need or barrier or existing-programs please select any relevant objectives. Also, complete the additional felds below, then press next, to review the potential opportunity for your program concept.")
+    st.write("Based on selection(s) of program strategy, for your program objective(s) might be recommended below. For strategy around either un-met need or barrier or existing-programs please select any relevant objectives. Also, complete the additional felds below, then press next, to review the potential opportunity for your program concept.")
         
 
     tag = []
