@@ -301,118 +301,13 @@ rates and outcomes if you were to design your program similarly.
     chnls.columns = ['Channels']
     chnls = chnls.drop_duplicates()
 
-    #Outcome Calculator
+    options = st.multiselect(
+    'Program Objectives',
+    ['Support adherence and persistence','Support complex patient/treatment journey','Best end-to-end experience','Support end-to-end experience','Support including disease and medicine education','Cross-functional including AHP support','Disease and medicine education','Emotional/psycho-social support','Medication access/financial support','Support carer','HCP support','Other specify'],
+    progobj)
 
+st.write('You selected:', options)
 
-    sr = results['Sr']
-
-    services = serv['Services']
-    channels = chnls['Channels']
-
-    master = references[references.Sr.isin(sr)]
-
-
-    sr = sr.head(1)
-    master = master[master.Sr.isin(sr)]
-
-    closest_match = master[master.Sr.isin(sr)]
-
-    services_match = closest_match[closest_match.Service.isin(services)]
-
-    channels_match = services_match[services_match.Channel.isin(channels)]
-    outcome = channels_match['MeasureBenefit'].max()
-    closest_outcome = outcome/100
-
-
-    match = channels_match[channels_match.MeasureBenefit.isin([outcome])]
-
-    intrinsic_scaling = 1
-
-    result_services = results['Services'].unique()
-    result_channels = results['Channel'].unique()
-
-    #print(result_channels)
-
-    def scale(match_services, selection_services, match_channel, selection_channel, outcome):
-        if len(selection_services) > len(match_services):
-            n = len(selection_services) - len(match_services)
-            service_scaling = (1.1)**n
-        elif len(selection_services) == len(match_services):
-            service_scaling = 1
-        else:
-            n = len(match_services) - len(selection_services)
-            service_scaling = (1.1)/n
-        print(service_scaling)
-        new_outcome = outcome*service_scaling
-
-        selection_channel_factors = []
-        for i in selection_channel:
-            if i in "Inperson":
-                selection_channel_factors.append(1)
-            elif i in "Telephone (clinical)":
-                selection_channel_factors.append(0.8)
-            elif i in "Welcome Pack":
-                selection_channel_factors.append(0.5)
-            elif i in "Website":
-                selection_channel_factors.append(0.1)
-            elif i in "Email/SMS/Mail":
-                selection_channel_factors.append(0.2)
-            elif i in "Telephone (non-clinical)":
-                selection_channel_factors.append(0.5)
-            elif i in "App":
-                selection_channel_factors.append(0.1)
-            elif i in "Partner organisations":
-                selection_channel_factors.append(0.2)
-            elif i in "Third-party tool/software":
-                selection_channel_factors.append(0.2)
-            elif i in "Other (specify)":
-                selection_channel_factors.append(0.4)
-            else:
-                selection_channel_factors.append(1)
-
-        match_channel_factors = []
-        for i in match_channel:
-            if i in "Inperson":
-                match_channel_factors.append(1)
-            elif i in "Telephone (clinical)":
-                match_channel_factors.append(0.8)
-            elif i in "Welcome Pack":
-                match_channel_factors.append(0.5)
-            elif i in "Website":
-                match_channel_factors.append(0.1)
-            elif i in "Email/SMS/Mail":
-                match_channel_factors.append(0.2)
-            elif i in "Telephone (non-clinical)":
-                match_channel_factors.append(0.5)
-            elif i in "App":
-                match_channel_factors.append(0.1)
-            elif i in "Partner organisations":
-                match_channel_factors.append(0.2)
-            elif i in "Third-party tool/software":
-                match_channel_factors.append(0.2)
-            elif i in "Other (specify)":
-                match_channel_factors.append(0.4)
-            else:
-                match_channel_factors.append(1)
-        print(selection_channel_factors)
-        print(match_channel_factors)
-        channel_scaling = max(selection_channel_factors)/max(match_channel_factors)
-        print()
-        print(channel_scaling)
-
-        new_outcome = new_outcome*channel_scaling
-
-        if new_outcome >= 2*outcome:
-            new_outcome = 2*outcome
-        elif new_outcome <= 0.5*outcome:
-            new_outcome = 0.5*outcome
-        print(new_outcome)
-        return new_outcome
-
-
-    recommendation_channels = channels_match['Channel']
-
-    display_outcome = scale(matched_serv, serv, chnls, result_channels, closest_outcome)
 
         
      
