@@ -14,7 +14,9 @@ rates and outcomes if you were to design your program similarly.
     ''')
     
     with st.form('Form1'):
-        st.selectbox('Therapy Area', ['Vanilla', 'Chocolate'], key=1)
+        st.selectbox('Therapy Area', ['Vanilla', 'Chocolate'], key=1)         
+        submit_button = st.form_submit_button('Submit 1')
+
         st.selectbox('Condition', ['Vanilla', 'Chocolate'], key=1)
         st.selectbox('Therapy Area', ['Vanilla', 'Chocolate'], key=1)
         st.selectbox('Drug Name', ['Vanilla', 'Chocolate'], key=1)
