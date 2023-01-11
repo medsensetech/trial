@@ -66,8 +66,27 @@ rates and outcomes if you were to design your program similarly.
 
     result = firsts.head(10)
 
-    sr = result['Sr']
-    print(sr.iloc[0])
+    results = pd.DataFrame(output)
+    
+    output = result.drop('Sr', axis=1)
+    output = output.drop('Sum', axis=1)
 
-    master = master[master.Sr.isin(sr)]
-    print(master)
+    no_participants = results['Participants'].sum()
+    no_programs = results['Condition'].count()
+
+    adoption_rate = results['Adoption'].max()/100
+
+    program_measure = results['Program Measure']
+
+
+    prem = results[results['Program Measure'].str.contains('PREM')]
+    non_prem = results[~results['Program Measure'].str.contains('PREM')]
+    patient_x = prem['Program benefit vs non-program'].max()/100
+    outcome = non_prem['Program benefit vs non-program'].max()/100
+
+    def remove_dup(x):
+        return list(dict.fromkeys(x))
+
+    st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
+    st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
+
