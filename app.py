@@ -13,6 +13,13 @@ most closely matches your selections.
 The results would display the services and channels used by similar programs along with the expected adoption
 rates and outcomes if you were to design your program similarly.
     ''')
+    
+    uploaded_file = st.file_uploader("Upload References")
+    if uploaded_file is not None:
+        # Can be used wherever a "file-like" object is accepted:
+        references = pd.read_csv(uploaded_file)
+        st.write(dataframe)
+
    
     with st.form('Form1'):
         th_area = st.selectbox('Therapy Area', ['Autoimmune/Immunology','Cardiovascular','Endocrine','Gastrointestinal','Infectious disease','Psychiatry','Nephrology','Neurology','Oncology','Pain','Rare Disease','Respiratory','Rheumatology','Vaccines','Ophthalmology','Haematology','Hepatology','Dermatology','Paediatrics','Obstetrics/Gynaecology','Transplant','Other chronic conditions','Other specify'], key=1)         
@@ -24,7 +31,7 @@ rates and outcomes if you were to design your program similarly.
         submit_button = st.form_submit_button('View Results')
     
 
-    references = pd.read_csv('dhairyavayada/trial/dataframe3.csv')
+    #references = pd.read_csv('dhairyavayada/trial/dataframe3.csv')
     references['Sum'] = pd.Series(dtype='int')
 
     # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
