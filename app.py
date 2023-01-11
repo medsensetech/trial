@@ -18,9 +18,6 @@ rates and outcomes if you were to design your program similarly.
     if uploaded_file is not None:
         # Can be used wherever a "file-like" object is accepted:
         references = pd.read_csv(uploaded_file)
-        st.write(references)
-
-   
     with st.form('Form1'):
         th_area = st.selectbox('Therapy Area', ['Autoimmune/Immunology','Cardiovascular','Endocrine','Gastrointestinal','Infectious disease','Psychiatry','Nephrology','Neurology','Oncology','Pain','Rare Disease','Respiratory','Rheumatology','Vaccines','Ophthalmology','Haematology','Hepatology','Dermatology','Paediatrics','Obstetrics/Gynaecology','Transplant','Other chronic conditions','Other specify'], key=1)         
         cond = st.selectbox('Condition', ['Acromegaly','Ankylosing spondylitis','Asthma','Crohns disease','Diabetes','Erythema nodosum leprosum','Growth hormone deficiency','Hidradenitis suppurativa','High blood pressure','Idiopathic pulmonary fibrosis','Knee osteoarthritis','Major depressive disorder','Multiple myeloma','Multiple sclerosis','Myelodysplastic syndrome','Neovascular age-related macular degeneration','Neuroendocrine tumours','Obesity','Opioid dependence','Osteoporosis','Ostomy surgery','Prostate cancer','Psoriasis','Psoriatic arthritis','Rheumatoid arthritis','Schizophrenia','Ulcerative colitis','Other chronic conditions','Other specify'], key=2)
@@ -37,7 +34,6 @@ rates and outcomes if you were to design your program similarly.
             sum_drug = 0
             sum_cond = 0
             sum_th = 0
-
             if str(references.loc[i, 'Route of Administration']) in str(roa):
                 sum_roa = 8
             if str(references.loc[i, 'Molecule']) in str(drug):
@@ -46,7 +42,6 @@ rates and outcomes if you were to design your program similarly.
                 sum_cond = 2
             if str(references.loc[i, 'Therapy Area']) in th_area:
                 sum_th = 1
-
             references.loc[i, 'Sum'] = sum_roa + sum_drug + sum_cond + sum_th
 
 
@@ -60,9 +55,9 @@ rates and outcomes if you were to design your program similarly.
 
 
 
-        result = firsts.head(10)
+        results = firsts.head(10)
 
-        output = result.drop('Sr', axis=1)
+        output = results.drop('Sr', axis=1)
         output = output.drop('Sum', axis=1)
 
         no_participants = results['Participants'].sum()
