@@ -20,5 +20,5 @@ rates and outcomes if you were to design your program similarly.
         st.selectbox('Program Stakeholders', ['GP','Specialist','Patient','Patient-Carer','Nurse','Pharmacist','AHPs','Other clinical staff, specify','Program-management','Partner organisations','Advocacy group','Other specify'], key=5)
         st.selectbox('Program Strategy', ['Supporting quality use of medicines','Providing patient support at-par with industry standard','Providing patient support that exceeds industry standard','Create a new program to be consistent with current enterprise programs','Address an unmet patient need or barrier','Expansion of existing program','Other specify'], key=6)
         st.selectbox('Route of Administration', ['ID','IV','IVI','NA','Oral','Inhale','Topical','Other specify'], key=7)        
-        submit_button = st.form_submit_button('Go')
+        submit_button = st.form_submit_button('View Results')
 
