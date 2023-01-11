@@ -12,11 +12,10 @@ most closely matches your selections.
 The results would display the services and channels used by similar programs along with the expected adoption
 rates and outcomes if you were to design your program similarly.
     ''')
-    
+   
     with st.form('Form1'):
         st.selectbox('Therapy Area', ['Vanilla', 'Chocolate'], key=1)         
         st.selectbox('Condition', ['Vanilla', 'Chocolate'], key=2)
-        st.selectbox('Therapy Area', ['Vanilla', 'Chocolate'], key=3)
         st.selectbox('Drug Name', ['Vanilla', 'Chocolate'], key=4)
         st.selectbox('Program Stakeholders', ['Vanilla', 'Chocolate'], key=5)
         st.selectbox('Program Strategy', ['Vanilla', 'Chocolate'], key=6)
