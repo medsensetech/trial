@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 if __name__ == "__main__":
     # setting header, description and citation
@@ -23,7 +24,7 @@ rates and outcomes if you were to design your program similarly.
         submit_button = st.form_submit_button('View Results')
     
 
-    references = pd.DataFrame('dhairyavayada/trial/dataframe3.csv')
+    references = pd.read_csv('dhairyavayada/trial/dataframe3.csv')
     references['Sum'] = pd.Series(dtype='int')
 
     # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
