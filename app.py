@@ -78,5 +78,5 @@ rates and outcomes if you were to design your program similarly.
     if submit_button:
         st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
         st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
-        st.table(output)
+        st.write(output)
 
