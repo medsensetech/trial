@@ -309,7 +309,7 @@ rates and outcomes if you were to design your program similarly.
     services = serv['Services']
     channels = chnls['Channels']
 
-    master = master[master.Sr.isin(sr)]
+    master = references[references.Sr.isin(sr)]
 
 
     sr = sr.head(1)
