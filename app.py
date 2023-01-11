@@ -63,15 +63,15 @@ rates and outcomes if you were to design your program similarly.
         no_participants = results['Participants'].sum()
         no_programs = results['Condition'].count()
 
-        adoption_rate = results['Adoption'].max()/100
+        adoption_rate = results['Adoption'].max()
 
         program_measure = results['Program Measure']
 
 
         prem = results[results['Program Measure'].str.contains('PREM')]
         non_prem = results[~results['Program Measure'].str.contains('PREM')]
-        patient_x = prem['Program benefit vs non-program'].max()/100
-        outcome = non_prem['Program benefit vs non-program'].max()/100
+        patient_x = prem['Program benefit vs non-program'].max()
+        outcome = non_prem['Program benefit vs non-program'].max()
 
     def remove_dup(x):
         return list(dict.fromkeys(x))
@@ -79,9 +79,10 @@ rates and outcomes if you were to design your program similarly.
         st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
         st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
         st.write(output)
+        st.write("Best case (from the top 10 programs that most closely match your selection criteria)")
         col1, col2, col3 = st.columns(3)
-        col1.metric("Adoption Rate", adoption_rate)
-        col2.metric("Patient Experience", patient_x)
-        col3.metric("Outcome", outcome)
+        col1.metric("Adoption Rate (%)", adoption_rate)
+        col2.metric("Patient Experience (%)", patient_x)
+        col3.metric("Outcome (%)", outcome)
 
 
