@@ -11,7 +11,6 @@ if __name__ == "__main__":
     - [Concept Builder](#section-2)
     ''', unsafe_allow_html=True)
 
-    st.set_page_config(page_title="Molecule icons")
     st.header('''
     Evidence Explorer
     ''')
