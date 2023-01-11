@@ -304,7 +304,7 @@ rates and outcomes if you were to design your program similarly.
     #Outcome Calculator
 
 
-    sr = result['Sr']
+    sr = results['Sr']
 
     services = serv['Services']
     channels = chnls['Channels']
