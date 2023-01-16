@@ -441,6 +441,10 @@ rates and outcomes if you were to design your program similarly.
     st.write(display_outcome)
     
     st.header("Concept Analyser")
+    
+    st.write('Welcome to the Concept analyser.')
+    st.write('To forecast the projected 5-year financials and to help predict concept sustainability, please complete the additional fields below to the best of your knowledge.')
+    
 
         
      
