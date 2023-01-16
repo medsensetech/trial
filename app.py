@@ -724,14 +724,14 @@ rates and outcomes if you were to design your program similarly.
     #Calculations
     if submit_button3:
         col1, col2, col3 = st.columns(3)
-        col1.metric("Adoption Rate (Year 1) (%)", round(adoption_1,2)*100)
-        col2.metric("Adoption Rate (Year 2) (%)", round(adoption_2,2)*100)
-        col3.metric("Compliance Improvement", round(adoption_3,2)*100)
+        col1.metric("Adoption Rate (Year 1) (%)", int(adoption_1)*100)
+        col2.metric("Adoption Rate (Year 2) (%)", int(adoption_2)*100)
+        col3.metric("Compliance Improvement", int(adoption_3)*100)
                     
         st.metric(label="Total Estimated Cost", value=total_cost, delta=ca_8,
         delta_color="off", help='Estimated cost compared to budget')
         
-        st.write('Based on the selected design settings, with a program adoption rate of', round(adoption_1,2)*100,'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
+        st.write('Based on the selected design settings, with a program adoption rate of', int(adoption_1)*100,'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
         st.table(ca_output)
 
         
