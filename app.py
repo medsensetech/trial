@@ -720,7 +720,7 @@ rates and outcomes if you were to design your program similarly.
         col2.metric("Adoption Rate (Year 2) (%)", adoption_2)
         col3.metric("Compliance Improvement", adoption_2)
         
-        st.write('Based on the selected design settings, with a program adoption rate of', adoption_rate*100,'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
+        st.write('Based on the selected design settings, with a program adoption rate of', adoption_1*100,'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
         st.write(ca_output)
 
         
