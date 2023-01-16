@@ -430,7 +430,7 @@ rates and outcomes if you were to design your program similarly.
         print(new_outcome)
         return new_outcome
 
-    outcome = output['MeasureBenefit'].max()
+    outcome = output['Program benefit vs non-program'].max()
     closest_outcome = outcome/100
 
 
