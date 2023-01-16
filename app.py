@@ -337,7 +337,6 @@ rates and outcomes if you were to design your program similarly.
         ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence', 'Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','HCP-Needs','Carer Enablement','Other specify'],
         matched_service)
         
-      
                 
         subserv = st.multiselect(
         'Sub-services',
@@ -446,11 +445,46 @@ rates and outcomes if you were to design your program similarly.
     st.write('To forecast the projected 5-year financials and to help predict concept sustainability, please complete the additional fields below to the best of your knowledge.')
     
     with st.form('Form3'):
+        
         st.write('Program Adoption Goals')
-        probj = st.multiselect(
-        'Program Objectives',
-        ['Support adherence and persistence','Support complex patient/treatment journey','Best end-to-end experience','Support end-to-end experience','Support including disease and medicine education','Cross-functional including AHP support','Disease and medicine education','Emotional/psycho-social support','Medication access/financial support','Support carer','HCP support','Other specify'],
-        program_objective)
+        ca1 = st.number_input('Patients on drug, (Year 1)')
+        ca2 = st.number_input('New patients on drug, (Year 2)')
+        ca3 = st.number_input('Patients on program, (Year 1)')
+        ca4 = st.number_input('New patients on program, (Year 2)')
+        annual_growth = st.number_input('Annual Growth')
+        proactive_support_window = st.selectbox(
+            "Proactive Support Window",
+            ('Welcome only','Initial year only','Ongoing'),
+            label_visibility=st.session_state.visibility,
+            disabled=st.session_state.disabled,)
+        
+        st.write('Program Compliance Benefits')
+        ca5 = st.number_input('Standard units per pt per year')
+        ca6 = st.number_input('Additional units per pt per yr')
+        
+        st.write('Program Content')
+        promotional_tactics = st.multiselect(
+        'Promotional Tactice',
+        ['Print mailer','EDMs','Advertising','Field force','Conferences','Demo devices','Packaging insert','Prescribing software','Pharmacy software','Partner organisations'])
+        
+        promotional_tactics = st.multiselect(
+        'Promotional Tactice',
+        ['Print mailer','EDMs','Advertising','Field force','Conferences','Demo devices','Packaging insert','Prescribing software','Pharmacy software','Partner organisations'])  
+        matched_serv = st.multiselect(
+        'Services',
+        ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence', 'Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','HCP-Needs','Carer Enablement','Other specify'],
+        matched_service)
+        
+        chnls = st.multiselect(
+        'Channels',
+        ['Inperson', 'Telephone (Nurse/AHP)', 'App', 'Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
+        channels)  
+        
+        st.write('Financial')
+        ca7 = st.number_input('Unit Price (AUD)')
+        ca8 = st.number_input('Budget ($)')
+        
+        
         submit_button3 = st.form_submit_button('Go')
 
         
