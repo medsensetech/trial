@@ -9,7 +9,7 @@ if __name__ == "__main__":
     # EH MVP v2.0
     - [Evidence Explorer](#section-1)
     - [Concept Builder](#section-2)
-    - [Concept Analyser] (#section-3)
+    - [Concept Analyser](#section-3)
     ''', unsafe_allow_html=True)
 
     st.header('''
