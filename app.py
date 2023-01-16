@@ -151,20 +151,20 @@ rates and outcomes if you were to design your program similarly.
     for i in program_objective:
         if i in 'Support adherence and persistence':
             matched_service.append('Patient Education')
-            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Side effects/Comorbitity Support")
             matched_service.append("Medicine Usage Support")
             matched_service.append("Medicine Supplies/Logistics")
             matched_service.append("Motivation-Confidence")
         elif i in 'Support complex patient/treatment journey':
             matched_service.append('Patient Education')
-            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Side effects/Comorbitity Support")
             matched_service.append("Medicine Usage Support")
             matched_service.append("Medicine Supplies/Logistics")
             matched_service.append("Effective HCP Appointments")
             matched_service.append("Motivation-Confidence")
         elif i in 'Best end-to-end experience':
             matched_service.append('Patient Education')
-            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Side effects/Comorbitity Support")
             matched_service.append("Medicine Usage Support")
             matched_service.append("Medicine Supplies/Logistics")
             matched_service.append("Effective HCP Appointments")
@@ -172,13 +172,13 @@ rates and outcomes if you were to design your program similarly.
             matched_service.append("Psychosocial-Emotional")
         elif i in 'Support end-to-end experience':
             matched_service.append('Patient Education')
-            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Side effects/Comorbitity Support")
             matched_service.append("Medicine Usage Support")
             matched_service.append("Effective HCP Appointments")
             matched_service.append("Motivation-Confidence")
         elif i in 'Support including disease and medicine education':
             matched_service.append('Patient Education')
-            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Side effects/Comorbitity Support")
             matched_service.append("Medicine Usage Support")
         elif i in 'Disease and medicine education':
             matched_service.append('Patient Education')
@@ -192,7 +192,7 @@ rates and outcomes if you were to design your program similarly.
             matched_service.append("Medicine Usage Support")
             matched_service.append("Carer Enablement")
         elif i in 'Cross-functional including AHP support':
-            matched_service.append("Sideeffects/Comorbitity Support")
+            matched_service.append("Side effects/Comorbitity Support")
             matched_service.append("Effective HCP Appointments")
         elif i in 'HCP support':
             matched_service.append("HCP-Needs")
@@ -266,7 +266,7 @@ rates and outcomes if you were to design your program similarly.
         elif i in "HCP-Needs":
             hcp_needs.append("HCP training")
         else:
-            hcp_needs.append("Others")
+            hcp_needs.append("Other specify")
 
 
     hcp_needs = remove_dup(hcp_needs)
@@ -323,7 +323,8 @@ rates and outcomes if you were to design your program similarly.
         
         hcp = st.multiselect(
         'HCP Needs',
-        ['Administrative burden','Complex therapy management','Time poor to deliver patient education/support','Multiple stakeholders in patient journey','Reassurance of care/support outside of their care','Patient support feedback loop','HCP training','Other specify'])       
+        ['Administrative burden','Complex therapy management','Time poor to deliver patient education/support','Multiple stakeholders in patient journey','Reassurance of care/support outside of their care','Patient support feedback loop','HCP training','Other specify'],
+        hcp_needs)       
         
         matched_serv = st.multiselect(
         'Services',
