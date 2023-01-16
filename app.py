@@ -538,6 +538,13 @@ rates and outcomes if you were to design your program similarly.
         f6 = c35.number_input("Website   ", value=0)
         g6 = c36.number_input("App   ", value=0)
         h6 = c37.number_input("Other   ", value=0)
+        
+        
+        program_costs = a1 + b1 +c1 + a2 + b2 + c2
+        service_cost_setup = a3 + b3 + c3 + d3 + e3 + f3 + g3 + h3
+        annual_var_services_cost = a6 + b6 + c6 + d6 + e6 + f6 + g6 + h6
+        
+        total_cost = program_costs + services_cost_setup + annual_var_services_cost
 
         #Calculations
         if (ca_3 == 0):
@@ -720,6 +727,10 @@ rates and outcomes if you were to design your program similarly.
         col1.metric("Adoption Rate (Year 1) (%)", adoption_1*100)
         col2.metric("Adoption Rate (Year 2) (%)", adoption_2*100)
         col3.metric("Compliance Improvement", adoption_3*100)
+                    
+        st.metric(label="Total Estimated Cost", value=total_cost, delta=ca_8,
+        delta_color="inverse")
+
         
         st.write('Based on the selected design settings, with a program adoption rate of', adoption_1*100,'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
         st.table(ca_output)
