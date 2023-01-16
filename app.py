@@ -490,9 +490,9 @@ rates and outcomes if you were to design your program similarly.
         c4, c5, c6 = st.columns(3)
         
         st.write("Ongoing (year 2+) - Fixed")
-        a2 = c4.number_input("First input")
-        b2 = c5.number_input("Second input")
-        c2 = c6.number_input("Third input")
+        a2 = c4.number_input("1 input")
+        b2 = c5.number_input("2 input")
+        c2 = c6.number_input("3 input")
         
         submit_button3 = st.form_submit_button('Go')
 
