@@ -494,7 +494,7 @@ rates and outcomes if you were to design your program similarly.
         c2 = c6.number_input("Program management ", value=20000)
     
         st.write('**Services costs (edit the default values as appropriate based on known or expected amounts for these services)**')
-        
+        st.write('Setup (year 1) - fixed')
         c7, c8, c9, c10, c11, c12, c13, c14 = st.columns(8)
         a3 = c7.number_input("Program Management", value=30000)
         b3 = c8.number_input("In-person", value=50000)
@@ -504,7 +504,17 @@ rates and outcomes if you were to design your program similarly.
         f3 = c12.number_input("Website", value=20000)
         g3 = c13.number_input("App", value=10000)
         h3 = c14.number_input("Other", value=20000)
-
+        
+        st.write('Ongoing (year 2+) - fixed')
+        c15, c16, c17, c18, c19, c20, c21, c22 = st.columns(8)
+        a4 = c15.number_input("Program Management ", value=30000)
+        b4 = c16.number_input("In-person ", value=50000)
+        c4 = c17.number_input("Telephone (Clin.) ", value=20000)
+        d4 = c18.number_input("Telephone (non-clin.) ", value=6000)
+        e4 = c19.number_input("Email/SMS/Mail ", value=10000)
+        f4 = c20.number_input("Website ", value=20000)
+        g4 = c21.number_input("App ", value=10000)
+        h4 = c22.number_input("Other ", value=20000)
         submit_button3 = st.form_submit_button('Go')
 
         
