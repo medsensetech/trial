@@ -480,19 +480,18 @@ rates and outcomes if you were to design your program similarly.
         ca8 = st.number_input('Budget ($)')
         
         st.write('Program costs (edit the default values as appropriate based on known or expected amounts for these program components)')
-        c1, c2, c3 = st.columns(3)
         
         st.write("Setup (year 1) - Fixed")
-        a1 = c1.number_input("First input")
-        b1 = c2.number_input("Second input")
-        c1 = c3.number_input("Third input")
-        
-        c4, c5, c6 = st.columns(3)
+        c1, c2, c3 = st.columns(3)
+        a1 = c1.number_input("Scoping/SOP/Engagement")
+        b1 = c2.number_input("Creative/content/materials")
+        c1 = c3.number_input("Program management")
         
         st.write("Ongoing (year 2+) - Fixed")
-        a2 = c4.number_input("1 input")
-        b2 = c5.number_input("2 input")
-        c2 = c6.number_input("3 input")
+        c4, c5, c6 = st.columns(3)
+        a2 = c4.number_input("Scoping/SOP/Engagement ")
+        b2 = c5.number_input("Creative/content/materials ")
+        c2 = c6.number_input("Program management ")
         
         submit_button3 = st.form_submit_button('Go')
 
