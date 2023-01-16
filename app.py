@@ -476,8 +476,8 @@ rates and outcomes if you were to design your program similarly.
         channels)  
         
         st.write('**Financial**')
-        ca7 = st.number_input('Unit Price (AUD)')
-        ca8 = st.number_input('Budget ($)')
+        ca_7 = st.number_input('Unit Price (AUD)')
+        ca_8 = st.number_input('Budget ($)')
         
         st.write('**Program costs (edit the default values as appropriate based on known or expected amounts for these program components)**')
         
@@ -677,11 +677,11 @@ rates and outcomes if you were to design your program similarly.
             total_costs_5 = round(fixed_setup_costs_5 + var_costs_5,2)
             total_costs_total = total_costs_1 + total_costs_2 + total_costs_3 + total_costs_4 + total_costs_5
 
-            rev_1 = round(no_pts_ongoing_1*ca_7*ca_6,1)
+            rev_1 = no_pts_ongoing_1*ca_7*ca_6
             rev_2 = no_pts_ongoing_2*ca_7*ca_6
             rev_3 = no_pts_ongoing_3*ca_7*ca_6
             rev_4 = no_pts_ongoing_4*ca_7*ca_6
-            rev_5 = round(no_pts_ongoing_5*ca_7*ca_6,2)
+            rev_5 = no_pts_ongoing_5*ca_7*ca_6
             rev_total = rev_1 + rev_2 + rev_3 + rev_4 + rev_5
 
             net_1 = round(rev_1 - total_costs_1,1)
