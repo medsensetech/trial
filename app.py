@@ -454,9 +454,7 @@ rates and outcomes if you were to design your program similarly.
         annual_growth = st.number_input('Annual Growth')
         proactive_support_window = st.selectbox(
             "Proactive Support Window",
-            ('Welcome only','Initial year only','Ongoing'),
-            label_visibility=st.session_state.visibility,
-            disabled=st.session_state.disabled,)
+            ('Welcome only','Initial year only','Ongoing'))
         
         st.write('Program Compliance Benefits')
         ca5 = st.number_input('Standard units per pt per year')
