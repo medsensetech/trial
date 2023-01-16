@@ -277,7 +277,7 @@ rates and outcomes if you were to design your program similarly.
     #hcp.columns = ['HCP Needs']
     #Step 5: Unique values of sub-services and channels 
 
-    matched_serv1 = remove_dup(matched_service)
+    #matched_serv1 = remove_dup(matched_service)
     #matched_serv = pd.DataFrame(matched_serv1)
     #matched_serv.columns = ['Services']
     #print(matched_serv)
@@ -286,7 +286,7 @@ rates and outcomes if you were to design your program similarly.
     serv = pd.DataFrame(services)
     serv.columns = ['Services']
 
-    temp = results[results.Services.isin(matched_serv1)]
+    temp = results[results.Services.isin(matched_service)]
     print(temp)
 
     sub_services = temp['Sub Services']
@@ -328,7 +328,7 @@ rates and outcomes if you were to design your program similarly.
         ['Administrative burden','Complex therapy management','Time poor to deliver patient education/support','Multiple stakeholders in patient journey','Reassurance of care/support outside of their care','Patient support feedback loop','HCP training','Other specify'],
         hcp_needs)       
         
-        matched_serv = st.multiselect(
+        matched_serv2 = st.multiselect(
         'Services',
         ['Patient Education','Motivation-Confidence','Medicine Usage Support','Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','Side effects/Comorbitity support','HCP-Needs','Effective HCP Appointments','Carer Enablement','Other specify'],
         matched_service)
