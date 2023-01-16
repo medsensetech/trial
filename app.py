@@ -483,15 +483,15 @@ rates and outcomes if you were to design your program similarly.
         
         st.write("Setup (year 1) - Fixed")
         c1, c2, c3 = st.columns(3)
-        a1 = c1.number_input("Scoping/SOP/Engagement", value=10)
-        b1 = c2.number_input("Creative/content/materials")
-        c1 = c3.number_input("Program management")
+        a1 = c1.number_input("Scoping/SOP/Engagement", value=30000)
+        b1 = c2.number_input("Creative/content/materials", value=50000)
+        c1 = c3.number_input("Program management", value=20000)
         
         st.write("Ongoing (year 2+) - Fixed")
         c4, c5, c6 = st.columns(3)
-        a2 = c4.number_input("Scoping/SOP/Engagement ")
-        b2 = c5.number_input("Creative/content/materials ")
-        c2 = c6.number_input("Program management ")
+        a2 = c4.number_input("Scoping/SOP/Engagement ", value=6000)
+        b2 = c5.number_input("Creative/content/materials ", value=10000)
+        c2 = c6.number_input("Program management ", value=20000)
         
         submit_button3 = st.form_submit_button('Go')
 
