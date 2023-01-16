@@ -515,6 +515,28 @@ rates and outcomes if you were to design your program similarly.
         f4 = c20.number_input("Website ", value=20000)
         g4 = c21.number_input("App ", value=10000)
         h4 = c22.number_input("Other ", value=20000)
+        
+        st.write('Annual fee per patient - variable')
+        c23, c24, c25, c26, c27, c28, c29, c30 = st.columns(8)
+        a5 = c23.number_input("Program Management  ", value=30000)
+        b5 = c24.number_input("In-person  ", value=50000)
+        c5 = c25.number_input("Telephone (Clin.)  ", value=20000)
+        d5 = c26.number_input("Telephone (non-clin.)  ", value=6000)
+        e5 = c27.number_input("Email/SMS/Mail  ", value=10000)
+        f5 = c28.number_input("Website  ", value=20000)
+        g5 = c29.number_input("App  ", value=10000)
+        h5 = c30.number_input("Other  ", value=20000)       
+        
+        st.write('Annual cost - variable')
+        c30, c31, c32, c33, c34, c35, c36, c37 = st.columns(8)
+        a6 = c30.number_input("Program Management   ", value=30000)
+        b6 = c31.number_input("In-person   ", value=50000)
+        c6 = c32.number_input("Telephone (Clin.)   ", value=20000)
+        d6 = c33.number_input("Telephone (non-clin.)   ", value=6000)
+        e6 = c34.number_input("Email/SMS/Mail   ", value=10000)
+        f6 = c35.number_input("Website   ", value=20000)
+        g6 = c36.number_input("App   ", value=10000)
+        h6 = c37.number_input("Other   ", value=20000)          
         submit_button3 = st.form_submit_button('Go')
 
         
