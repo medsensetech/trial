@@ -544,7 +544,7 @@ rates and outcomes if you were to design your program similarly.
         if ca4 == 0:
             ca4 = 1
         adoption_1 = ca1/(ca3)
-        adoption2 = ca2/(ca4)
+        adoption_2 = ca2/(ca4)
         
         submit_button3 = st.form_submit_button('Go')
 
