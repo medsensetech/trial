@@ -196,6 +196,8 @@ rates and outcomes if you were to design your program similarly.
             matched_service.append("Effective HCP Appointments")
         elif i in 'HCP support':
             matched_service.append("HCP-Needs")
+        else:
+            matched_service.append("Other specify")
 
     matched_service = remove_dup(matched_service)
 
