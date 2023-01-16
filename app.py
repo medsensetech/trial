@@ -3,7 +3,7 @@ import pandas as pd
 
 if __name__ == "__main__":
     # setting header, description and citation
-     st.set_page_config(layout="wide")
+    st.set_page_config(layout="wide")
     
     st.sidebar.markdown('''
     # EH MVP v2.0
