@@ -538,7 +538,13 @@ rates and outcomes if you were to design your program similarly.
         g6 = c36.number_input("App   ", value=10000)
         h6 = c37.number_input("Other   ", value=20000)          
         submit_button3 = st.form_submit_button('Go')
+    
+    st.subheader('ALT1 Scenario')
+    with st.form('Form4'):
+        c38, c39, c40 = st.columns(3)
+        alt1_ar = c38.number_input("ALT1 - Adoption Rate")
+        alt1_ygp = c39.number_input("ALT1 - Yearly growth Program")
+        alt1_au = c40.number_input("ALT1 - Additional units per pt per yr")
+        submit_button4 = st.form_submit_button('Go')
 
-        
-     
 
