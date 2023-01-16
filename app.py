@@ -446,7 +446,7 @@ rates and outcomes if you were to design your program similarly.
     
     with st.form('Form3'):
         
-        st.write('Program Adoption Goals')
+        st.write('**Program Adoption Goals**')
         ca1 = st.number_input('Patients on drug, (Year 1)')
         ca2 = st.number_input('New patients on drug, (Year 2)')
         ca3 = st.number_input('Patients on program, (Year 1)')
@@ -456,11 +456,11 @@ rates and outcomes if you were to design your program similarly.
             "Proactive Support Window",
             ('Welcome only','Initial year only','Ongoing'))
         
-        st.write('Program Compliance Benefits')
+        st.write('**Program Compliance Benefits**')
         ca5 = st.number_input('Standard units per pt per year')
         ca6 = st.number_input('Additional units per pt per yr')
         
-        st.write('Program Content')
+        st.write('**Program Content**')
         promotional_tactics = st.multiselect(
         'Promotional Tactice',
         ['Print mailer','EDMs','Advertising','Field force','Conferences','Demo devices','Packaging insert','Prescribing software','Pharmacy software','Partner organisations'])
@@ -475,7 +475,7 @@ rates and outcomes if you were to design your program similarly.
         ['Inperson', 'Telephone (Nurse/AHP)', 'App', 'Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
         channels)  
         
-        st.write('Financial')
+        st.write('**Financial**')
         ca7 = st.number_input('Unit Price (AUD)')
         ca8 = st.number_input('Budget ($)')
         
@@ -492,7 +492,19 @@ rates and outcomes if you were to design your program similarly.
         a2 = c4.number_input("Scoping/SOP/Engagement ", value=6000)
         b2 = c5.number_input("Creative/content/materials ", value=10000)
         c2 = c6.number_input("Program management ", value=20000)
+    
+        st.write('**Services costs (edit the default values as appropriate based on known or expected amounts for these services)**')
         
+        c7, c8, c9, c10, c11, c12, c13, c14 = columns(8)
+        a3 = c7.number_input("Program Management", value=30000)
+        b3 = c8.number_input("In-person", value=50000)
+        c3 = c9.number_input("Telephone (Clinical)", value=20000)
+        d3 = c10.number_input("Telephone (non-clinical)", value=6000)
+        e3 = c11.number_input("Email/SMS/Mail", value=10000)
+        f3 = c12.number_input("Website", value=20000)
+        g3 = c13.number_input("App", value=10000)
+        h3 = c14.number_input("Other", value=20000)
+
         submit_button3 = st.form_submit_button('Go')
 
         
