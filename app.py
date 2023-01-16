@@ -479,6 +479,18 @@ rates and outcomes if you were to design your program similarly.
         ca7 = st.number_input('Unit Price (AUD)')
         ca8 = st.number_input('Budget ($)')
         
+        st.write('Program costs (edit the default values as appropriate based on known or expected amounts for these program components)')
+        col1, col2, col3 = st.columns(3)
+        
+        st.write("Setup (year 1) - Fixed")
+        a1 = c1.number_input("First input")
+        b1 = c2.number_input("Second input")
+        c1 = c3.number_input("Third input")
+        
+        st.write("Ongoing (year 2+) - Fixed")
+        a2 = c1.number_input("First input")
+        b2 = c2.number_input("Second input")
+        c2 = c3.number_input("Third input")
         
         submit_button3 = st.form_submit_button('Go')
 
