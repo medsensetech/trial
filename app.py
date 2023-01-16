@@ -25,7 +25,7 @@ rates and outcomes if you were to design your program similarly.
     uploaded_file = st.file_uploader("Upload References")
     if uploaded_file is not None:
         # Can be used wherever a "file-like" object is accepted:
-        references=0
+        st.write('Please upload')
         references = pd.read_csv(uploaded_file)
     with st.form('Form1'):
         th_area = st.selectbox('Therapy Area', ['Autoimmune/Immunology','Cardiovascular','Endocrine','Gastrointestinal','Infectious disease','Psychiatry','Nephrology','Neurology','Oncology','Pain','Rare Disease','Respiratory','Rheumatology','Vaccines','Ophthalmology','Haematology','Hepatology','Dermatology','Paediatrics','Obstetrics/Gynaecology','Transplant','Other chronic conditions','Other specify'], key=1)         
