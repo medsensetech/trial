@@ -729,5 +729,8 @@ rates and outcomes if you were to design your program similarly.
         alt1_ar = c38.number_input("ALT1 - Adoption Rate")
         alt1_ygp = c39.number_input("ALT1 - Yearly growth Program")
         alt1_au = c40.number_input("ALT1 - Additional units per pt per yr")
+        alt1_output = ca(alt1_ar, alt1_ygp, alt1_au)
         submit_button4 = st.form_submit_button('Go')
+    if submit_button4:
+        st.write(alt1_output)
 
