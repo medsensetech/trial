@@ -430,16 +430,7 @@ rates and outcomes if you were to design your program similarly.
         print(new_outcome)
         return new_outcome
 
-    sr = results['Sr']
-    sr = sr.head(1)
-    master = references[references.Sr.isin(sr)]
-
-    closest_match = master[master.Sr.isin(sr)]
-
-    services_match = closest_match[closest_match.Service.isin(services)]
-
-    channels_match = services_match[services_match.Channel.isin(channels)]
-    outcome = channels_match['MeasureBenefit'].max()
+    outcome = output['MeasureBenefit'].max()
     closest_outcome = outcome/100
 
 
