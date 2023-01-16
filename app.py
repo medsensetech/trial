@@ -143,8 +143,8 @@ rates and outcomes if you were to design your program similarly.
     #print(program_objective)
     program_objective = remove_dup(program_objective)
 
-    progobj = pd.DataFrame(program_objective)
-    progobj.columns = ['Program Objective']
+    #progobj = pd.DataFrame(program_objective)
+    #progobj.columns = ['Program Objective']
 
     matched_service = []
 
@@ -242,8 +242,8 @@ rates and outcomes if you were to design your program similarly.
             pt_needs.append("Co-morbidities/co-meds/medication burden")
     pt_needs = remove_dup(pt_needs)
     #print(pt_needs)
-    ptneeds = pd.DataFrame(pt_needs)
-    ptneeds.columns = ['Patient Needs']
+    #ptneeds = pd.DataFrame(pt_needs)
+    #ptneeds.columns = ['Patient Needs']
 
     #Step 4: For each matched service, display HCP needs
     #print(matched_service)
@@ -270,14 +270,14 @@ rates and outcomes if you were to design your program similarly.
 
 
     hcp_needs = remove_dup(hcp_needs)
-    hcp = pd.DataFrame(hcp_needs)
+    #hcp = pd.DataFrame(hcp_needs)
     #print(hcp_needs)
-    hcp.columns = ['HCP Needs']
+    #hcp.columns = ['HCP Needs']
     #Step 5: Unique values of sub-services and channels 
 
     matched_serv1 = remove_dup(matched_service)
-    matched_serv = pd.DataFrame(matched_serv1)
-    matched_serv.columns = ['Services']
+    #matched_serv = pd.DataFrame(matched_serv1)
+    #matched_serv.columns = ['Services']
     #print(matched_serv)
 
     services = remove_dup(results['Services'])
@@ -291,15 +291,15 @@ rates and outcomes if you were to design your program similarly.
     #print(sub_services)
 
     subserv = pd.DataFrame(sub_services)
-    subserv.columns = ['Sub Services']
-    subserv = subserv.drop_duplicates()
+    #subserv.columns = ['Sub Services']
+    #subserv = subserv.drop_duplicates()
     #print(sub_services)
 
     channels = temp['Channel']
     #print(channels)
-    chnls = pd.DataFrame(channels)
-    chnls.columns = ['Channels']
-    chnls = chnls.drop_duplicates()
+    #chnls = pd.DataFrame(channels)
+    #chnls.columns = ['Channels']
+    #chnls = chnls.drop_duplicates()
     
     
     with st.form('Form2'):
@@ -311,10 +311,39 @@ rates and outcomes if you were to design your program similarly.
         prsetting = st.selectbox(
         'Program Setting',
         ('New product launch (PBS)','New product launch (private)','Existing product in market','New indication','Other specify'))
+        
+         adminfreq = st.selectbox(
+        'Administration Frequency',
+        ('Daily','Weekly','Fortnightly','Monthly','Quarterly','Twice-yearly','Once-yearly','PRN (as required)','Other specify'))
+            
+        ptneeds = st.multiselect(
+        'Patient Needs',
+        ['Disease education','Treatment education','Side effects education','Carer enablement','Effective HCP appointments','Access to HCPs','Logistics (e.g. transport)','Financial','Medicine logistics','ePharmacy','Convenience','Reminders (medication, appointments, tests)','Medicine routine','Monitoring support','Access to diagnostics/tests/exams','Supports treatment initiation','Self-administration','Motivation','Supports treatment maintenance / persistence','Psychosocial','Peer to peer networking/community','Co-morbidities/co-meds/medication burden','Other specify'],
+        pt_needs)
+        
+        hcp = st.multiselect(
+        'Program Objectives',
+        ['Administrative burden','Complex therapy management','Time poor to deliver patient education/support','Multiple stakeholders in patient journey','Reassurance of care/support outside of their care','Patient support feedback loop','HCP training','Other specify'],
+        hcp_needs)       
+        
+        matched_serv = st.multiselect(
+        'Services',
+        ['Patient Education','Motivation-Confidence','Medicine Usage Support','Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','Side effects/Comorbitity support','HCP-Needs','Effective HCP Appointments','Carer Enablement','Other specify'],
+        matched_serv1)
+        
+        subserv = st.multiselect(
+        'Sub-services',
+        ['Nurse/AHP assistance','Welcome Pack','Website','Help-line (non-clinical)','App','Partner organisations','Email/SMS/Mail','AHP services','Tools-Kits','Reminders','Telemonitoring','Adherence service','Coaching/Counseling','Individual care plan','Goal Setting','Drug/inj training','Dose support (inc. induction, FDO, titration)','Drug administraion/infusion (home)','Drug administraion/infusion (clinic)','Home Delivery/Order','Disposal','Pharmacy Supply','Patient care coordination','Logistics-travel','Appointment preparation','Patient communities-support','Psychological intervention','e-diary/patient story','Patient-segmentation','Co-pay','Free-supply','Insurance support','PSP-patient feedback','Medicine Usage Support','HCP/AHP training','Effective HCP Appointments','Approval/administrative support','Vouchers','Other specify'],
+        sub_services)
+               
+        chnls = st.multiselect(
+        'Channels',
+        ['Inperson','Telephone (clinical)','Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
+        channels)
+        
         submit_button2 = st.form_submit_button('View Results')
 
 
-st.write('You selected:', options)
 
 
         
