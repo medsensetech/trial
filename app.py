@@ -546,6 +546,10 @@ rates and outcomes if you were to design your program similarly.
         adoption_1 = ca1/(ca3)
         adoption_2 = ca2/(ca4)
         
+        if ca6 == 0:
+            ca6 = 1
+        adoption_3 = ca5/(ca6)
+        
         submit_button3 = st.form_submit_button('Go')
 
     #Calculations
@@ -553,10 +557,11 @@ rates and outcomes if you were to design your program similarly.
 
  
     if submit_button3:
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
         col1.metric("Adoption Rate (Year 1) (%)", adoption_1)
         col2.metric("Adoption Rate (Year 2) (%)", adoption_2)
-        
+        col3.metric("Compliance Improvement", adoption_2)
+
         
     st.subheader('ALT1 Scenario')
     with st.form('Form4'):
