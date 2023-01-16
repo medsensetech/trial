@@ -716,9 +716,9 @@ rates and outcomes if you were to design your program similarly.
     #Calculations
     if submit_button3:
         col1, col2, col3 = st.columns(3)
-        col1.metric("Adoption Rate (Year 1) (%)", adoption_1)
-        col2.metric("Adoption Rate (Year 2) (%)", adoption_2)
-        col3.metric("Compliance Improvement", adoption_2)
+        col1.metric("Adoption Rate (Year 1) (%)", adoption_1*100)
+        col2.metric("Adoption Rate (Year 2) (%)", adoption_2*100)
+        col3.metric("Compliance Improvement", adoption_3)
         
         st.write('Based on the selected design settings, with a program adoption rate of', adoption_1*100,'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
         st.write(ca_output)
