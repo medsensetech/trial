@@ -332,7 +332,7 @@ rates and outcomes if you were to design your program similarly.
         
         matched_serv2 = st.multiselect(
         'Services',
-        ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence'],
+        ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence', 'Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','HCP-Needs','Carer Enablement','Other specify'],
         matched_service)
         
         subserv = st.multiselect(
