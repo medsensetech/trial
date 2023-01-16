@@ -300,11 +300,19 @@ rates and outcomes if you were to design your program similarly.
     chnls = pd.DataFrame(channels)
     chnls.columns = ['Channels']
     chnls = chnls.drop_duplicates()
+    
+    
+    with st.form('Form2'):
+        probj = st.multiselect(
+        'Program Objectives',
+        ['Support adherence and persistence','Support complex patient/treatment journey','Best end-to-end experience','Support end-to-end experience','Support including disease and medicine education','Cross-functional including AHP support','Disease and medicine education','Emotional/psycho-social support','Medication access/financial support','Support carer','HCP support','Other specify'],
+        program_objective)
+        
+        prsetting = st.selectbox(
+        'Program Setting',
+        ('New product launch (PBS)','New product launch (private)','Existing product in market','New indication','Other specify'))
+        submit_button2 = st.form_submit_button('View Results')
 
-    options = st.multiselect(
-    'Program Objectives',
-    ['Support adherence and persistence','Support complex patient/treatment journey','Best end-to-end experience','Support end-to-end experience','Support including disease and medicine education','Cross-functional including AHP support','Disease and medicine education','Emotional/psycho-social support','Medication access/financial support','Support carer','HCP support','Other specify'],
-    program_objective)
 
 st.write('You selected:', options)
 
