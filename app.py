@@ -446,7 +446,7 @@ rates and outcomes if you were to design your program similarly.
     st.write('To forecast the projected 5-year financials and to help predict concept sustainability, please complete the additional fields below to the best of your knowledge.')
     
     with st.form('Form3'):
-        str.subheader('Program Adoption Goals')
+        st.subheader('Program Adoption Goals')
         probj = st.multiselect(
         'Program Objectives',
         ['Support adherence and persistence','Support complex patient/treatment journey','Best end-to-end experience','Support end-to-end experience','Support including disease and medicine education','Cross-functional including AHP support','Disease and medicine education','Emotional/psycho-social support','Medication access/financial support','Support carer','HCP support','Other specify'],
