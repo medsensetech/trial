@@ -336,13 +336,16 @@ rates and outcomes if you were to design your program similarly.
         ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence', 'Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','HCP-Needs','Carer Enablement','Other specify'],
         matched_service)
         
-        st.write(sub_services)
+      
                 
         subserv = st.multiselect(
         'Sub-services',
         ['Nurse/AHP assistance', 'App', 'Dose/inj training', 'Welcome Pack','Website','Help-line (non-clinical)','Partner organisations','Email/SMS/Mail','AHP services','Tools-Kits','Reminders','Telemonitoring','Adherence service','Coaching/Counseling','Individual care plan','Goal Setting','Dose support (inc. induction, FDO, titration)','Drug administraion/infusion (home)','Drug administraion/infusion (clinic)','Home Delivery/Order','Disposal','Pharmacy Supply','Patient care coordination','Logistics-travel','Appointment preparation','Patient communities-support','Psychological intervention','e-diary/patient story','Patient-segmentation','Co-pay','Free-supply','Insurance support','PSP-patient feedback','Medicine Usage Support','HCP/AHP training','Effective HCP Appointments','Approval/administrative support','Vouchers','Testing', 'Other specify'],
         sub_services)
                        
+            
+        st.write(temp)
+        
         chnls = st.multiselect(
         'Channels',
         ['Inperson', 'Telephone (Nurse/AHP)', 'App', 'Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
