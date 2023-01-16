@@ -293,9 +293,7 @@ rates and outcomes if you were to design your program similarly.
 
     #print(sub_services)
 
-    subserv = pd.DataFrame(sub_services)
-    subserv.columns = ['Sub Services']
-    subserv = subserv.drop_duplicates()
+    subserv = sub_services.drop_duplicates()
     sub_services = subserv.values.tolist()
 
     #print(sub_services)
