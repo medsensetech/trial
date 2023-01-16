@@ -729,7 +729,7 @@ rates and outcomes if you were to design your program similarly.
         col3.metric("Compliance Improvement", adoption_3*100)
                     
         st.metric(label="Total Estimated Cost", value=total_cost, delta=ca_8,
-        delta_color="inverse")
+        delta_color="off", help('Estimated cost compared to budget')
 
         
         st.write('Based on the selected design settings, with a program adoption rate of', adoption_1*100,'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
