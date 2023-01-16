@@ -33,13 +33,7 @@ rates and outcomes if you were to design your program similarly.
         p_strategy = st.selectbox('Program Strategy', ['Supporting quality use of medicines','Providing patient support at-par with industry standard','Providing patient support that exceeds industry standard','Create a new program to be consistent with current enterprise programs','Address an unmet patient need or barrier','Expansion of existing program','Other specify'], key=6)
         roa = st.selectbox('Route of Administration', ['ID','IV','IVI','NA','Oral','Inhale','Topical','Other specify'], key=7)        
         #references = pd.read_csv('dhairyavayada/trial/dataframe3.csv')
-        submit_button = st.form_submit_button('View 
-                                              
-                                              
-                                              
-                                              
-                                              
-                                              s')
+        submit_button = st.form_submit_button('View Results')
         references['Sum'] = pd.Series(dtype='int')
         # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
         for i, row in references.iterrows():
