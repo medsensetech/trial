@@ -345,7 +345,7 @@ rates and outcomes if you were to design your program similarly.
                
         chnls = st.multiselect(
         'Channels',
-        ['Inperson','Telephone (clinical)','Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
+        ['Inperson', 'Telephone (Nurse/AHP)', 'App', 'Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
         channels)
         
         submit_button2 = st.form_submit_button('View Results')
