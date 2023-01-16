@@ -138,7 +138,7 @@ rates and outcomes if you were to design your program similarly.
             program_objective.append("Support carer")
             program_objective.append("HCP support")
         else:
-            program_objective.append("Other")
+            program_objective.append("Other specify")
 
     #print(program_objective)
     program_objective = remove_dup(program_objective)
@@ -331,7 +331,7 @@ rates and outcomes if you were to design your program similarly.
         matched_serv = st.multiselect(
         'Services',
         ['Patient Education','Motivation-Confidence','Medicine Usage Support','Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','Side effects/Comorbitity support','HCP-Needs','Effective HCP Appointments','Carer Enablement','Other specify'],
-        matched_serv1)
+        matched_service)
         
         subserv = st.multiselect(
         'Sub-services',
