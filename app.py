@@ -447,18 +447,18 @@ rates and outcomes if you were to design your program similarly.
     with st.form('Form3'):
         
         st.write('**Program Adoption Goals**')
-        ca1 = st.number_input('Patients on drug, (Year 1)')
-        ca2 = st.number_input('New patients on drug, (Year 2)')
-        ca3 = st.number_input('Patients on program, (Year 1)')
-        ca4 = st.number_input('New patients on program, (Year 2)')
+        ca_1 = st.number_input('Patients on drug, (Year 1)')
+        ca_2 = st.number_input('New patients on drug, (Year 2)')
+        ca_3 = st.number_input('Patients on program, (Year 1)')
+        ca_4 = st.number_input('New patients on program, (Year 2)')
         annual_growth = st.number_input('Annual Growth')
         proactive_support_window = st.selectbox(
             "Proactive Support Window",
             ('Welcome only','Initial year only','Ongoing'))
         
         st.write('**Program Compliance Benefits**')
-        ca5 = st.number_input('Standard units per pt per year')
-        ca6 = st.number_input('Additional units per pt per yr')
+        ca_5 = st.number_input('Standard units per pt per year')
+        ca_6 = st.number_input('Additional units per pt per yr')
         
         st.write('**Program Content**')
         promotional_tactics = st.multiselect(
@@ -539,28 +539,188 @@ rates and outcomes if you were to design your program similarly.
         h6 = c37.number_input("Other   ", value=0)
 
         #Calculations
-        if (ca3 == 0):
-            ca3 = 1
-        if ca4 == 0:
-            ca4 = 1
-        adoption_1 = ca1/(ca3)
-        adoption_2 = ca2/(ca4)
+        if (ca_3 == 0):
+            ca_3 = 1
+        if ca_4 == 0:
+            ca_4 = 1
+        adoption_1 = ca_1/(ca_3)
+        adoption_2 = ca_2/(ca_4)
         
-        if ca6 == 0:
-            ca6 = 1
-        adoption_3 = ca5/(ca6)
+        if ca_6 == 0:
+            ca_6 = 1
+        adoption_3 = ca_5/(ca_6)
         
+        def ca(adoption_rate, annual_growth, additional_units):
+
+            no_pts_new_1 = round(ca_3,1)
+            no_pts_new_2 = ca_2
+            no_pts_new_3 = (1+annual_growth)*ca_2
+            no_pts_new_4 = (1+annual_growth)*no_pts_new_3
+            no_pts_new_5 = (1+annual_growth)*no_pts_new_4
+            no_pts_new_total = no_pts_new_1 + no_pts_new_2 + no_pts_new_3 + no_pts_new_4 + no_pts_new_5
+
+            no_pts_ongoing_1 = round(ca_3,1)
+            if proactive_support_window in ('Ongoing'):
+                no_pts_ongoing_2 = ca_4 + no_pts_ongoing_1*0.8
+                no_pts_ongoing_3 = ca_4 + no_pts_ongoing_2*0.8
+                no_pts_ongoing_4 = no_pts_ongoing_3*1.8
+                no_pts_ongoing_5 = round(no_pts_ongoing_4*1.8,1)
+            else:
+                no_pts_ongoing_2 = no_pts_ongoing_1
+                no_pts_ongoing_3 = no_pts_ongoing_2
+                no_pts_ongoing_4 = no_pts_ongoing_3
+                no_pts_ongoing_5 = round(no_pts_ongoing_4,1)
+
+            no_pts_ongoing_total = no_pts_ongoing_1 + no_pts_ongoing_2 + no_pts_ongoing_3 + no_pts_ongoing_4 + no_pts_ongoing_5
+
+            fixed_setup_costs_1 = round(100000,1)
+            fixed_setup_costs_2 = 36000
+            for i in chnls:
+                if i in ('Inperson'):
+                    fixed_setup_costs_1 += 60000
+                    fixed_setup_costs_2 += 20000
+                elif i in ('Program management'):
+                    fixed_setup_costs_1 += 20000
+                    fixed_setup_costs_2 += 20000
+                elif i in ('Telephone (clinical)'):
+                    fixed_setup_costs_1 += 30000
+                    fixed_setup_costs_2 += 10000
+                elif i in ('Website'):
+                    fixed_setup_costs_1 += 30000
+                    fixed_setup_costs_2 += 15000
+                elif i in ('Email/SMS/Mail'):
+                    fixed_setup_costs_1 += 5000
+                    fixed_setup_costs_2 += 5000
+                elif i in ('Telephone (non-clinical)'):
+                    fixed_setup_costs_1 += 10000
+                    fixed_setup_costs_2 += 5000
+                elif i in ('App'):
+                    fixed_setup_costs_1 += 100000
+                    fixed_setup_costs_2 += 100000
+                elif i in ('Partner organisations'):
+                    fixed_setup_costs_1 += 5000
+                    fixed_setup_costs_2 += 2500
+                elif i in ('Third-party tool/software'):
+                    fixed_setup_costs_1 += 5000
+                    fixed_setup_costs_2 += 2500
+
+
+            fixed_setup_costs_3 = fixed_setup_costs_2
+            fixed_setup_costs_4 = fixed_setup_costs_2
+            fixed_setup_costs_5 = fixed_setup_costs_2
+            fixed_setup_costs_total = fixed_setup_costs_2
+
+
+        #Change logic - look at services cost table
+            var_costs_1 = 1
+            var_costs_2 = 1
+            var_costs_3 = 1
+            var_costs_4 = 1
+            var_costs_5 = 1
+            chnls_list = chnls.values.tolist()
+            chnls_list = [item for sublist in chnls_list for item in sublist]
+
+            print(chnls_list)
+            for i in chnls_list:
+                if i in ('Program management'):
+                    var_costs_1 += 50*no_pts_ongoing_1
+                    var_costs_2 += 50*no_pts_ongoing_2
+                    var_costs_3 += 50*no_pts_ongoing_3
+                    var_costs_4 += 50*no_pts_ongoing_4
+                    var_costs_5 += 50*no_pts_ongoing_5
+                elif i in ('Inperson'):
+                    var_costs_1 += 600*no_pts_ongoing_1
+                    print(var_costs_1)
+                    var_costs_2 += 600*no_pts_ongoing_2
+                    var_costs_3 += 600*no_pts_ongoing_3
+                    var_costs_4 += 600*no_pts_ongoing_4
+                    var_costs_5 += 600*no_pts_ongoing_5
+                elif i in ('Telephone (clinical)'):
+                    var_costs_1 += 200*no_pts_ongoing_1
+                    var_costs_2 += 200*no_pts_ongoing_2
+                    var_costs_3 += 200*no_pts_ongoing_3
+                    var_costs_4 += 200*no_pts_ongoing_4
+                    var_costs_5 += 200*no_pts_ongoing_5
+                elif i in ('Welcome Pack'):
+                    var_costs_1 += 150*no_pts_ongoing_1
+                    var_costs_2 += 150*no_pts_ongoing_2
+                    var_costs_3 += 150*no_pts_ongoing_3
+                    var_costs_4 += 150*no_pts_ongoing_4
+                    var_costs_5 += 150*no_pts_ongoing_5
+                elif i in ('Email/SMS/Mail'):
+                    var_costs_1 += 10*no_pts_ongoing_1
+                    var_costs_2 += 10*no_pts_ongoing_2
+                    var_costs_3 += 10*no_pts_ongoing_3
+                    var_costs_4 += 10*no_pts_ongoing_4
+                    var_costs_5 += 10*no_pts_ongoing_5
+                elif i in ('Telephone (non-clinical)'):
+                    var_costs_1 += 100*no_pts_ongoing_1
+                    var_costs_2 += 100*no_pts_ongoing_2
+                    var_costs_3 += 100*no_pts_ongoing_3
+                    var_costs_4 += 100*no_pts_ongoing_4
+                    var_costs_5 += 100*no_pts_ongoing_5
+                elif i in ('Third-party tool/software'):
+                    var_costs_1 += 100*no_pts_ongoing_1
+                    var_costs_2 += 100*no_pts_ongoing_2
+                    var_costs_3 += 100*no_pts_ongoing_3
+                    var_costs_4 += 100*no_pts_ongoing_4
+                    var_costs_5 += 100*no_pts_ongoing_5
+            var_costs_1 = round(var_costs_1,2)
+            var_costs_5 = round(var_costs_5,2)
+            print(var_costs_1)
+            var_costs_total = var_costs_1 + var_costs_2 + var_costs_3 + var_costs_4 + var_costs_5
+
+            total_costs_1 = round(fixed_setup_costs_1 + var_costs_1,1)
+            total_costs_2 = fixed_setup_costs_2 + var_costs_2
+            total_costs_3 = fixed_setup_costs_3 + var_costs_3
+            total_costs_4 = fixed_setup_costs_4 + var_costs_4
+            total_costs_5 = round(fixed_setup_costs_5 + var_costs_5,2)
+            total_costs_total = total_costs_1 + total_costs_2 + total_costs_3 + total_costs_4 + total_costs_5
+
+            rev_1 = round(no_pts_ongoing_1*ca_7*ca_6,1)
+            rev_2 = no_pts_ongoing_2*ca_7*ca_6
+            rev_3 = no_pts_ongoing_3*ca_7*ca_6
+            rev_4 = no_pts_ongoing_4*ca_7*ca_6
+            rev_5 = round(no_pts_ongoing_5*ca_7*ca_6,2)
+            rev_total = rev_1 + rev_2 + rev_3 + rev_4 + rev_5
+
+            net_1 = round(rev_1 - total_costs_1,1)
+            net_2 = rev_2 - total_costs_2
+            net_3 = rev_3 - total_costs_3
+            net_4 = rev_4 - total_costs_4
+            net_5 = round(rev_5 - total_costs_5,2)
+            net_total = net_1 + net_2 + net_3 + net_4 + net_5
+
+            cumulative_1 = round(net_1,1)
+            cumulative_2 = cumulative_1 + net_2
+            cumulative_3 = cumulative_2 + net_3
+            cumulative_4 = cumulative_3 + net_4
+            cumulative_5 = cumulative_4 + net_5
+            cumulative_total = cumulative_1 + cumulative_2 + cumulative_3 + cumulative_4 + cumulative_5 
+
+            d = {'Items': ['No. pts new', 'No. pts ongoing', 'Fixed setup costs', 'Variable costs', 'Total costs', 'Revenue - improved compliance', 'Net income/loss', 'Cumulative income/loss'], 
+            'Year 1': [no_pts_new_1, no_pts_ongoing_1, fixed_setup_costs_1, var_costs_1, total_costs_1, rev_1, net_1, cumulative_1],
+            'Year 2': [no_pts_new_2, no_pts_ongoing_2, fixed_setup_costs_2, var_costs_2, total_costs_2, rev_2, net_2, cumulative_2],
+            'Year 3': [no_pts_new_3, no_pts_ongoing_3, fixed_setup_costs_3, var_costs_3, total_costs_3, rev_3, net_3, cumulative_3],
+            'Year 4': [no_pts_new_4, no_pts_ongoing_4, fixed_setup_costs_4, var_costs_4, total_costs_4, rev_4, net_4, cumulative_4],
+            'Year 5': [no_pts_new_5, no_pts_ongoing_5, fixed_setup_costs_5, var_costs_5, total_costs_5, rev_5, net_5, cumulative_5],
+            'Total': [no_pts_new_total, no_pts_ongoing_total, fixed_setup_costs_total, var_costs_total, total_costs_total, rev_total, net_total, cumulative_total]}
+
+            ca_output = pd.DataFrame(data=d)
+
+            return ca_output
+
+        ca_output = ca(adoption_rate, annual_growth, ca_6)
         submit_button3 = st.form_submit_button('Go')
 
     #Calculations
-
-
- 
     if submit_button3:
         col1, col2, col3 = st.columns(3)
         col1.metric("Adoption Rate (Year 1) (%)", adoption_1)
         col2.metric("Adoption Rate (Year 2) (%)", adoption_2)
         col3.metric("Compliance Improvement", adoption_2)
+        
+        st.write(ca_output)
 
         
     st.subheader('ALT1 Scenario')
