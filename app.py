@@ -465,15 +465,12 @@ rates and outcomes if you were to design your program similarly.
         'Promotional Tactice',
         ['Print mailer','EDMs','Advertising','Field force','Conferences','Demo devices','Packaging insert','Prescribing software','Pharmacy software','Partner organisations'])
         
-        promotional_tactics = st.multiselect(
-        'Promotional Tactice',
-        ['Print mailer','EDMs','Advertising','Field force','Conferences','Demo devices','Packaging insert','Prescribing software','Pharmacy software','Partner organisations'])  
-        matched_serv = st.multiselect(
+        matched_serv2 = st.multiselect(
         'Services',
         ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence', 'Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','HCP-Needs','Carer Enablement','Other specify'],
         matched_service)
         
-        chnls = st.multiselect(
+        chnls2 = st.multiselect(
         'Channels',
         ['Inperson', 'Telephone (Nurse/AHP)', 'App', 'Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
         channels)  
