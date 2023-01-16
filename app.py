@@ -540,7 +540,7 @@ rates and outcomes if you were to design your program similarly.
         submit_button3 = st.form_submit_button('Go')
 
     #Calculations
-    if ca_3 == 0:
+    if (ca_3 == 0):
         ca_3 = 1
     if ca_4 == 0:
         ca_4 = 1
