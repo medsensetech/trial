@@ -495,7 +495,7 @@ rates and outcomes if you were to design your program similarly.
     
         st.write('**Services costs (edit the default values as appropriate based on known or expected amounts for these services)**')
         
-        c7, c8, c9, c10, c11, c12, c13, c14 = columns(8)
+        c7, c8, c9, c10, c11, c12, c13, c14 = st.columns(8)
         a3 = c7.number_input("Program Management", value=30000)
         b3 = c8.number_input("In-person", value=50000)
         c3 = c9.number_input("Telephone (Clinical)", value=20000)
