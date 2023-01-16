@@ -710,7 +710,7 @@ rates and outcomes if you were to design your program similarly.
 
             return ca_output
 
-        ca_output = ca(adoption_rate, annual_growth, ca_6)
+        ca_output = ca(adoption_1, annual_growth, ca_6)
         submit_button3 = st.form_submit_button('Go')
 
     #Calculations
