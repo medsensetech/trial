@@ -302,7 +302,9 @@ rates and outcomes if you were to design your program similarly.
     #print(channels)
     #chnls = pd.DataFrame(channels)
     #chnls.columns = ['Channels']
-    #chnls = chnls.drop_duplicates()
+    chnls = channels.drop_duplicates()
+    channels = chnls.values.tolist()
+
     
     
     with st.form('Form2'):
