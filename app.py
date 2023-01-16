@@ -575,7 +575,7 @@ rates and outcomes if you were to design your program similarly.
 
             fixed_setup_costs_1 = round(100000,1)
             fixed_setup_costs_2 = 36000
-            for i in chnls:
+            for i in chnls2:
                 if i in ('Inperson'):
                     fixed_setup_costs_1 += 60000
                     fixed_setup_costs_2 += 20000
@@ -617,7 +617,7 @@ rates and outcomes if you were to design your program similarly.
             var_costs_3 = 1
             var_costs_4 = 1
             var_costs_5 = 1
-            chnls_list = chnls.values.tolist()
+            chnls_list = chnls2
             chnls_list = [item for sublist in chnls_list for item in sublist]
 
             print(chnls_list)
