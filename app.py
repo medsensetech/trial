@@ -554,7 +554,7 @@ rates and outcomes if you were to design your program similarly.
  
     if submit_button3:
         col1, col2 = st.columns(2)
-        col1.metric("Adoption Rate (Year 1)(%)", adoption_1)
+        col1.metric("Adoption Rate (Year 1) (%)", adoption_1)
         col2.metric("Adoption Rate (Year 2) (%)", adoption_2)
         
         
