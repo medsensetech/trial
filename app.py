@@ -483,7 +483,7 @@ rates and outcomes if you were to design your program similarly.
         
         st.write("Setup (year 1) - Fixed")
         c1, c2, c3 = st.columns(3)
-        a1 = c1.number_input("Scoping/SOP/Engagement")
+        a1 = c1.number_input("Scoping/SOP/Engagement", value=10)
         b1 = c2.number_input("Creative/content/materials")
         c1 = c3.number_input("Program management")
         
