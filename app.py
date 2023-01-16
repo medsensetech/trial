@@ -327,13 +327,13 @@ rates and outcomes if you were to design your program similarly.
         'HCP Needs',
         ['Administrative burden','Complex therapy management','Time poor to deliver patient education/support','Multiple stakeholders in patient journey','Reassurance of care/support outside of their care','Patient support feedback loop','HCP training','Other specify'],
         hcp_needs)       
-        
-        st.write(matched_service)
-        
-        matched_serv2 = st.multiselect(
+                
+        matched_serv = st.multiselect(
         'Services',
         ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence', 'Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','HCP-Needs','Carer Enablement','Other specify'],
         matched_service)
+        
+        st.write(sub_services)
         
         subserv = st.multiselect(
         'Sub-services',
