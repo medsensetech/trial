@@ -537,15 +537,19 @@ rates and outcomes if you were to design your program similarly.
         f6 = c35.number_input("Website   ", value=0)
         g6 = c36.number_input("App   ", value=0)
         h6 = c37.number_input("Other   ", value=0)
+
+        #Calculations
+        if (ca3 == 0):
+            ca3 = 1
+        if ca4 == 0:
+            ca4 = 1
+        adoption_1 = ca1/(ca3)
+        adoption2 = ca_2/(ca4)
+        
         submit_button3 = st.form_submit_button('Go')
 
     #Calculations
-    if (ca_3 == 0):
-        ca_3 = 1
-    if ca_4 == 0:
-        ca_4 = 1
-    adoption_1 = ca_1/(ca_3)
-    adoption_2 = ca_2/(ca_4)
+
 
  
     if submit_button3:
