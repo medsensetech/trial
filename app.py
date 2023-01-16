@@ -721,7 +721,7 @@ rates and outcomes if you were to design your program similarly.
         col3.metric("Compliance Improvement", adoption_3*100)
         
         st.write('Based on the selected design settings, with a program adoption rate of', adoption_1*100,'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
-        st.dataframe(ca_output)
+        st.table(ca_output)
 
         
     st.subheader('ALT1 Scenario')
