@@ -270,7 +270,6 @@ rates and outcomes if you were to design your program similarly.
 
 
     hcp_needs = remove_dup(hcp_needs)
-    st.write(hcp_needs)
     #hcp = pd.DataFrame(hcp_needs)
     #print(hcp_needs)
     #hcp.columns = ['HCP Needs']
@@ -324,8 +323,7 @@ rates and outcomes if you were to design your program similarly.
         
         hcp = st.multiselect(
         'HCP Needs',
-        ['Administrative burden','Complex therapy management','Time poor to deliver patient education/support','Multiple stakeholders in patient journey','Reassurance of care/support outside of their care','Patient support feedback loop','HCP training','Other specify'],
-        hcp_needs)       
+        ['Administrative burden','Complex therapy management','Time poor to deliver patient education/support','Multiple stakeholders in patient journey','Reassurance of care/support outside of their care','Patient support feedback loop','HCP training','Other specify'])       
         
         matched_serv = st.multiselect(
         'Services',
