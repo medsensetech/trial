@@ -541,7 +541,7 @@ rates and outcomes if you were to design your program similarly.
         
         
         program_costs = a1 + b1 +c1 + a2 + b2 + c2
-        service_cost_setup = a3 + b3 + c3 + d3 + e3 + f3 + g3 + h3
+        services_cost_setup = a3 + b3 + c3 + d3 + e3 + f3 + g3 + h3
         annual_var_services_cost = a6 + b6 + c6 + d6 + e6 + f6 + g6 + h6
         
         total_cost = program_costs + services_cost_setup + annual_var_services_cost
