@@ -270,6 +270,7 @@ rates and outcomes if you were to design your program similarly.
 
 
     hcp_needs = remove_dup(hcp_needs)
+    st.write(hcp_needs)
     #hcp = pd.DataFrame(hcp_needs)
     #print(hcp_needs)
     #hcp.columns = ['HCP Needs']
