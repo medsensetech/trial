@@ -37,54 +37,54 @@ rates and outcomes if you were to design your program similarly.
         roa = st.selectbox('Route of Administration', ['ID','IV','IVI','NA','Oral','Inhale','Topical','Other specify'], key=7)        
         #references = pd.read_csv('dhairyavayada/trial/dataframe3.csv')
         submit_button = st.form_submit_button('View Results')
-        references['Sum'] = pd.Series(dtype='int')
-        # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
-        for i, row in references.iterrows():
-            sum_roa = 0
-            sum_drug = 0
-            sum_cond = 0
-            sum_th = 0
-            if str(references.loc[i, 'Route of Administration']) in str(roa):
-                sum_roa = 8
-            if str(references.loc[i, 'Molecule']) in str(drug):
-                sum_drug = 4
-            if str(references.loc[i, 'Condition']) in str(cond):
-                sum_cond = 2
-            if str(references.loc[i, 'Therapy Area']) in th_area:
-                sum_th = 1
-            references.loc[i, 'Sum'] = sum_roa + sum_drug + sum_cond + sum_th
+    references['Sum'] = pd.Series(dtype='int')
+    # if ES_15M_Summary.loc[index, 'Rolling_OLS_Coefficient'] > .08:
+    for i, row in references.iterrows():
+        sum_roa = 0
+        sum_drug = 0
+        sum_cond = 0
+        sum_th = 0
+        if str(references.loc[i, 'Route of Administration']) in str(roa):
+            sum_roa = 8
+        if str(references.loc[i, 'Molecule']) in str(drug):
+            sum_drug = 4
+        if str(references.loc[i, 'Condition']) in str(cond):
+            sum_cond = 2
+        if str(references.loc[i, 'Therapy Area']) in th_area:
+            sum_th = 1
+        references.loc[i, 'Sum'] = sum_roa + sum_drug + sum_cond + sum_th
 
 
-        sorted_df = references.sort_values(by=['Sum', 'Participants', 'Adoption', 'Program benefit vs non-program'], ascending=False)
+    sorted_df = references.sort_values(by=['Sum', 'Participants', 'Adoption', 'Program benefit vs non-program'], ascending=False)
 
 
-        firsts = sorted_df.groupby('Sr', as_index=False).first()
+    firsts = sorted_df.groupby('Sr', as_index=False).first()
 
 
-        firsts = firsts.sort_values(by=['Sum', 'Participants'], ascending=False)
+    firsts = firsts.sort_values(by=['Sum', 'Participants'], ascending=False)
 
 
 
-        results = firsts.head(10)
+    results = firsts.head(10)
 
-        output = results.drop('Sr', axis=1)
-        output = output.drop('Sum', axis=1)
+    output = results.drop('Sr', axis=1)
+    output = output.drop('Sum', axis=1)
 
-        no_participants = results['Participants'].sum()
-        no_programs = results['Condition'].count()
+    no_participants = results['Participants'].sum()
+    no_programs = results['Condition'].count()
 
-        adoption_rate = results['Adoption'].max()
+    adoption_rate = results['Adoption'].max()
 
-        program_measure = results['Program Measure']
+    program_measure = results['Program Measure']
 
 
-        prem = results[results['Program Measure'].str.contains('PREM')]
-        non_prem = results[~results['Program Measure'].str.contains('PREM')]
-        patient_x = prem['Program benefit vs non-program'].max()
-        outcome = non_prem['Program benefit vs non-program'].max()
+    prem = results[results['Program Measure'].str.contains('PREM')]
+    non_prem = results[~results['Program Measure'].str.contains('PREM')]
+    patient_x = prem['Program benefit vs non-program'].max()
+    outcome = non_prem['Program benefit vs non-program'].max()
 
-    def remove_dup(x):
-        return list(dict.fromkeys(x))
+def remove_dup(x):
+    return list(dict.fromkeys(x))
     if submit_button:
         st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
         st.write("Best case (from the top 10 programs that most closely match your selection criteria)")
