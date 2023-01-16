@@ -479,7 +479,7 @@ rates and outcomes if you were to design your program similarly.
         ca7 = st.number_input('Unit Price (AUD)')
         ca8 = st.number_input('Budget ($)')
         
-        st.write('Program costs (edit the default values as appropriate based on known or expected amounts for these program components)')
+        st.write('**Program costs (edit the default values as appropriate based on known or expected amounts for these program components)**')
         
         st.write("Setup (year 1) - Fixed")
         c1, c2, c3 = st.columns(3)
