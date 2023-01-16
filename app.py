@@ -536,9 +536,25 @@ rates and outcomes if you were to design your program similarly.
         e6 = c34.number_input("Email/SMS/Mail   ", value=5000)
         f6 = c35.number_input("Website   ", value=0)
         g6 = c36.number_input("App   ", value=0)
-        h6 = c37.number_input("Other   ", value=0)          
+        h6 = c37.number_input("Other   ", value=0)
+        
+        #Calculations
+        
+        if ca_3 == 0:
+            ca_3 = 1
+        if ca_4 == 0:
+            ca_4 = 1
+        adoption_1 = ca_1/(ca_3)
+        adoption_2 = ca_2/(ca_4)
+
         submit_button3 = st.form_submit_button('Go')
-    
+ 
+    if submit_button3:
+        col1, col2 = st.columns(2)
+        col1.metric("Adoption Rate (Year 1)(%)", adoption_1)
+        col2.metric("Adoption Rate (Year 2) (%)", adoption_2)
+        
+        
     st.subheader('ALT1 Scenario')
     with st.form('Form4'):
         c38, c39, c40 = st.columns(3)
@@ -546,5 +562,4 @@ rates and outcomes if you were to design your program similarly.
         alt1_ygp = c39.number_input("ALT1 - Yearly growth Program")
         alt1_au = c40.number_input("ALT1 - Additional units per pt per yr")
         submit_button4 = st.form_submit_button('Go')
-
 
