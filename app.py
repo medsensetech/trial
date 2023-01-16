@@ -312,7 +312,7 @@ rates and outcomes if you were to design your program similarly.
         'Program Setting',
         ('New product launch (PBS)','New product launch (private)','Existing product in market','New indication','Other specify'))
         
-         adminfreq = st.selectbox(
+        adminfreq = st.selectbox(
         'Administration Frequency',
         ('Daily','Weekly','Fortnightly','Monthly','Quarterly','Twice-yearly','Once-yearly','PRN (as required)','Other specify'))
             
