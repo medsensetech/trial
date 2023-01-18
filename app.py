@@ -336,13 +336,13 @@ rates and outcomes if you were to design your program similarly.
                 
         matched_serv = st.multiselect(
         'Services',
-        ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence', 'Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','HCP-Needs','Carer Enablement','Other specify'],
+        ['Carer Enablement','Effective HCP Appointments','Financial','HCP-Needs','Medicine Supplies/Logistics','Medicine Usage Support','Motivation-Confidence','Patient Education','Psychosocial-Emotional','Side effects/Comobidities Support','Other specify'],
         matched_service)
         
                 
         subserv = st.multiselect(
         'Sub-services',
-        ['Nurse/AHP assistance', 'App', 'Dose/inj training', 'Welcome Pack','Website','Help-line (non-clinical)','Partner organisations','Email/SMS/Mail','AHP services','Tools-Kits','Reminders','Telemonitoring','Adherence service','Coaching/Counseling','Individual care plan','Goal Setting','Dose support (inc. induction, FDO, titration)','Drug administraion/infusion (home)','Drug administraion/infusion (clinic)','Home Delivery/Order','Disposal','Pharmacy Supply','Patient care coordination','Logistics-travel','Appointment preparation','Patient communities-support','Psychological intervention','e-diary/patient story','Patient-segmentation','Co-pay','Free-supply','Insurance support','PSP-patient feedback','Medicine Usage Support','HCP/AHP training','Effective HCP Appointments','Approval/administrative support','Vouchers','Testing', 'Other specify'],
+        ['Adherence service','AHPs services','App','Appointment preparation','Approval/Administrative support','Co-pay','Coaching/Counseling','Disposal','Dose support (inc. induction, FDO, titration)','Dose/inj training','Drug administraion/infusion (clinic)','Drug administraion/infusion (home)','e-diary/patient story','Effective HCP Appointments','Email/SMS/Mail','Free-Supply','Goal Setting','HCP/AHP training','Help-line (non-clinical)','Home Delivery/Order','Individual care plan','Insurance support','Logistics-travel','Medicine Usage Support','NA','Nurse/AHP assistance','Partner organisations','Patient care coordination','Patient communities-support','Patient-segmentation','Pharmacy supply','PSP-patient feedback','Psychological intervention','Reminders','Telemonitoring','Testing','Tools-Kits','Vouchers','Website','Welcome Pack', 'Other specify'],
         sub_services)
                        
             
@@ -350,7 +350,7 @@ rates and outcomes if you were to design your program similarly.
         
         chnls = st.multiselect(
         'Channels',
-        ['Inperson', 'Telephone (Nurse/AHP)', 'App', 'Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
+        ['App','Digital (other)','Email/SMS/Mail','Inperson','NA','Partner organisations','Print','Telephone (clinical)','Telephone (non-clinical)','Third-party tool/software','Website','Welcome Pack', 'Other specify'],
         channels)
         
         submit_button2 = st.form_submit_button('View Results')
@@ -439,7 +439,7 @@ rates and outcomes if you were to design your program similarly.
     display_outcome = scale(matched_service, matched_serv, channels, chnls, closest_outcome)
 
 
-    st.write(display_outcome)
+    st.metric(label="Opportunity Calculator (% improvement in outcome)", display_outcome)
     
     st.header("Concept Analyser")
     
