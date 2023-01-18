@@ -339,18 +339,16 @@ rates and outcomes if you were to design your program similarly.
         ['Carer Enablement','Effective HCP Appointments','Financial','HCP-Needs','Medicine Supplies/Logistics','Medicine Usage Support','Motivation-Confidence','Patient Education','Psychosocial-Emotional','Side effects/Comobidities Support','Other specify'],
         matched_service)
         
-                
         subserv = st.multiselect(
         'Sub-services',
         ['Adherence service','AHPs services','App','Appointment preparation','Approval/Administrative support','Co-pay','Coaching/Counseling','Disposal','Dose support (inc. induction, FDO, titration)','Dose/inj training','Drug administraion/infusion (clinic)','Drug administraion/infusion (home)','e-diary/patient story','Effective HCP Appointments','Email/SMS/Mail','Free-Supply','Goal Setting','HCP/AHP training','Help-line (non-clinical)','Home Delivery/Order','Individual care plan','Insurance support','Logistics-travel','Medicine Usage Support','NA','Nurse/AHP assistance','Partner organisations','Patient care coordination','Patient communities-support','Patient-segmentation','Pharmacy supply','PSP-patient feedback','Psychological intervention','Reminders','Telemonitoring','Testing','Tools-Kits','Vouchers','Website','Welcome Pack', 'Other specify'],
         sub_services)
                        
-            
         st.write(temp)
         
         chnls = st.multiselect(
         'Channels',
-        ['App','Digital (other)','Email/SMS/Mail','Inperson','NA','Partner organisations','Print','Telephone (clinical)','Telephone (non-clinical)','Third-party tool/software','Website','Welcome Pack', 'Other specify'],
+        ['App','Digital (other)','Email/SMS/Mail','Inperson','NA','Other specify','Partner organisations','Print','Telephone (clinical)','Telephone (non-clinical)','Third-party tool/software','Website','Welcome Pack'],
         channels)
         
         submit_button2 = st.form_submit_button('View Results')
@@ -474,7 +472,7 @@ rates and outcomes if you were to design your program similarly.
         
         chnls2 = st.multiselect(
         'Channels',
-        ['Inperson', 'Telephone (Nurse/AHP)', 'App', 'Welcome Pack','Website','Email/SMS/Mail','Telephone (non-clinical)','App','Partner organisations','Third-party tool/software','Print','Digital (other)','Other specify'],
+        [],
         channels)  
         
         st.write('**Financial**')
