@@ -203,7 +203,8 @@ rates and outcomes if you were to design your program similarly.
             matched_service.append("Other specify")
 
     matched_service = remove_dup(matched_service)
-
+    st.write('MATCHED SERVICE')
+    st.write(matched_service)
 
     #print(matched_service)
 
