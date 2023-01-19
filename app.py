@@ -54,7 +54,7 @@ rates and outcomes if you were to design your program similarly.
                 sum_th = 1
             references.loc[i, 'Sum'] = sum_roa + sum_drug + sum_cond + sum_th
 
-
+        st.write(p_strategy)
         sorted_df = references.sort_values(by=['Sum', 'Participants', 'Adoption', 'Program benefit vs non-program'], ascending=False)
 
 
