@@ -625,56 +625,63 @@ rates and outcomes if you were to design your program similarly.
             chnls_list = chnls2
             chnls_list = [item for sublist in chnls_list for item in sublist]
 
-            print(chnls_list)
-            for i in chnls_list:
-                if i in ('Program management'):
-                    var_costs_1 += 50*no_pts_ongoing_1
-                    var_costs_2 += 50*no_pts_ongoing_2
-                    var_costs_3 += 50*no_pts_ongoing_3
-                    var_costs_4 += 50*no_pts_ongoing_4
-                    var_costs_5 += 50*no_pts_ongoing_5
-                elif i in ('Inperson'):
-                    var_costs_1 += 600*no_pts_ongoing_1
-                    print(var_costs_1)
-                    var_costs_2 += 600*no_pts_ongoing_2
-                    var_costs_3 += 600*no_pts_ongoing_3
-                    var_costs_4 += 600*no_pts_ongoing_4
-                    var_costs_5 += 600*no_pts_ongoing_5
-                elif i in ('Telephone (clinical)'):
-                    var_costs_1 += 200*no_pts_ongoing_1
-                    var_costs_2 += 200*no_pts_ongoing_2
-                    var_costs_3 += 200*no_pts_ongoing_3
-                    var_costs_4 += 200*no_pts_ongoing_4
-                    var_costs_5 += 200*no_pts_ongoing_5
-                elif i in ('Welcome Pack'):
-                    var_costs_1 += 150*no_pts_ongoing_1
-                    var_costs_2 += 150*no_pts_ongoing_2
-                    var_costs_3 += 150*no_pts_ongoing_3
-                    var_costs_4 += 150*no_pts_ongoing_4
-                    var_costs_5 += 150*no_pts_ongoing_5
-                elif i in ('Email/SMS/Mail'):
-                    var_costs_1 += 10*no_pts_ongoing_1
-                    var_costs_2 += 10*no_pts_ongoing_2
-                    var_costs_3 += 10*no_pts_ongoing_3
-                    var_costs_4 += 10*no_pts_ongoing_4
-                    var_costs_5 += 10*no_pts_ongoing_5
-                elif i in ('Telephone (non-clinical)'):
-                    var_costs_1 += 100*no_pts_ongoing_1
-                    var_costs_2 += 100*no_pts_ongoing_2
-                    var_costs_3 += 100*no_pts_ongoing_3
-                    var_costs_4 += 100*no_pts_ongoing_4
-                    var_costs_5 += 100*no_pts_ongoing_5
-                elif i in ('Third-party tool/software'):
-                    var_costs_1 += 100*no_pts_ongoing_1
-                    var_costs_2 += 100*no_pts_ongoing_2
-                    var_costs_3 += 100*no_pts_ongoing_3
-                    var_costs_4 += 100*no_pts_ongoing_4
-                    var_costs_5 += 100*no_pts_ongoing_5
-            var_costs_1 = round(var_costs_1,2)
-            var_costs_5 = round(var_costs_5,2)
-            print(var_costs_1)
+            #print(chnls_list)
+            #for i in chnls_list:
+                #if i in ('Program management'):
+                    #var_costs_1 += 50*no_pts_ongoing_1
+                    #var_costs_2 += 50*no_pts_ongoing_2
+                    #var_costs_3 += 50*no_pts_ongoing_3
+                    #var_costs_4 += 50*no_pts_ongoing_4
+                    #var_costs_5 += 50*no_pts_ongoing_5
+                #elif i in ('Inperson'):
+                  #  var_costs_1 += 600*no_pts_ongoing_1
+                   # print(var_costs_1)
+                   # var_costs_2 += 600*no_pts_ongoing_2
+                    #var_costs_3 += 600*no_pts_ongoing_3
+                    #var_costs_4 += 600*no_pts_ongoing_4
+                    #var_costs_5 += 600*no_pts_ongoing_5
+                #elif i in ('Telephone (clinical)'):
+                  #  var_costs_1 += 200*no_pts_ongoing_1
+                  #  var_costs_2 += 200*no_pts_ongoing_2
+                  #  var_costs_3 += 200*no_pts_ongoing_3
+                  #  var_costs_4 += 200*no_pts_ongoing_4
+                  #  var_costs_5 += 200*no_pts_ongoing_5
+               # elif i in ('Welcome Pack'):
+                 #   var_costs_1 += 150*no_pts_ongoing_1
+                 #   var_costs_2 += 150*no_pts_ongoing_2
+                 #   var_costs_3 += 150*no_pts_ongoing_3
+                  #  var_costs_4 += 150*no_pts_ongoing_4
+                #    var_costs_5 += 150*no_pts_ongoing_5
+               # elif i in ('Email/SMS/Mail'):
+                #    var_costs_1 += 10*no_pts_ongoing_1
+                 #   var_costs_2 += 10*no_pts_ongoing_2
+                  #  var_costs_3 += 10*no_pts_ongoing_3
+                  #  var_costs_4 += 10*no_pts_ongoing_4
+                  #  var_costs_5 += 10*no_pts_ongoing_5
+              #  elif i in ('Telephone (non-clinical)'):
+               #     var_costs_1 += 100*no_pts_ongoing_1
+                #    var_costs_2 += 100*no_pts_ongoing_2
+                 #   var_costs_3 += 100*no_pts_ongoing_3
+                  #  var_costs_4 += 100*no_pts_ongoing_4
+                   # var_costs_5 += 100*no_pts_ongoing_5
+               # elif i in ('Third-party tool/software'):
+                #    var_costs_1 += 100*no_pts_ongoing_1
+                 #   var_costs_2 += 100*no_pts_ongoing_2
+                  #  var_costs_3 += 100*no_pts_ongoing_3
+                   # var_costs_4 += 100*no_pts_ongoing_4
+                   # var_costs_5 += 100*no_pts_ongoing_5
+            #var_costs_1 = round(var_costs_1,2)
+            #var_costs_5 = round(var_costs_5,2)
+            #print(var_costs_1)
+            
+            var_costs_1 = annual_var_services_cost*no_pts_ongoing_1
+            var_costs_2 = annual_var_services_cost*no_pts_ongoing_2
+            var_costs_3 = annual_var_services_cost*no_pts_ongoing_3
+            var_costs_4 = annual_var_services_cost*no_pts_ongoing_5
+            var_costs_5 = annual_var_services_cost*no_pts_ongoing_5
+            
             var_costs_total = var_costs_1 + var_costs_2 + var_costs_3 + var_costs_4 + var_costs_5
-
+            
             total_costs_1 = round(fixed_setup_costs_1 + var_costs_1,1)
             total_costs_2 = fixed_setup_costs_2 + var_costs_2
             total_costs_3 = fixed_setup_costs_3 + var_costs_3
