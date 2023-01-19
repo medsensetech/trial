@@ -92,9 +92,9 @@ rates and outcomes if you were to design your program similarly.
         col1.metric("Adoption Rate (%)", adoption_rate)
         col2.metric("Patient Experience (%)", patient_x)
         col3.metric("Outcome (%)", outcome)
-
+        display_output = output.pop(output.columns[0])
         st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
-        st.write(output)
+        st.write(display_output)
 
         
     st.header("Concept Builder")
