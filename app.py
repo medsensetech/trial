@@ -721,9 +721,9 @@ rates and outcomes if you were to design your program similarly.
     #Calculations
     if submit_button3:
         col1, col2, col3 = st.columns(3)
-        col1.metric("Adoption Rate (Year 1) (%)", math.trunc((adoption_1)*100))
-        col2.metric("Adoption Rate (Year 2) (%)", math.trunc((adoption_2)*100))
-        col3.metric("Compliance Improvement", math.trunc((adoption_3)*100))
+        col1.metric("Adoption Rate (Year 1) (%)", math.trunc((adoption_1)))
+        col2.metric("Adoption Rate (Year 2) (%)", math.trunc((adoption_2)))
+        col3.metric("Compliance Improvement", math.trunc((adoption_3)))
                     
         st.metric(label="Total Estimated Cost", value=total_cost, delta=ca_8,
         delta_color="off", help='Estimated cost compared to budget')
