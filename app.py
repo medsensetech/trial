@@ -107,20 +107,18 @@ rates and outcomes if you were to design your program similarly.
     tag = []
     #print(program_strategy)
 
-    for i in p_strategy:
-        st.write(p_strategy)
-        if i in ("Supporting quality use of medicines"):
-            tag.append("Med")
-        elif i in ("Providing patient support at-par with industry standard"):
-            tag.append("Low")
-        elif i in ("Providing patient support that exceeds industry standard"):
-            tag.append("High")
-        elif i in ("Create a new program to be consistent with current enterprise programs") or i in ("Expansion of existing program"):
-            tag.append("Existing program")
-        elif i in ("Address an unmet patient need or barrier"):
-            tag.append("Unmet Need")
-        else:
-            tag.append("Other")
+    if p_strategy in ("Supporting quality use of medicines"):
+        tag.append("Med")
+    elif p_strategy in ("Providing patient support at-par with industry standard"):
+        tag.append("Low")
+    elif p_strategy in ("Providing patient support that exceeds industry standard"):
+        tag.append("High")
+    elif p_strategy in ("Create a new program to be consistent with current enterprise programs") or i in ("Expansion of existing program"):
+        tag.append("Existing program")
+    elif p_strategy in ("Address an unmet patient need or barrier"):
+        tag.append("Unmet Need")
+    else:
+        tag.append("Other")
     #print(tag)
 
     #Step 2: For each program objective, select unique Matched Services (Matrix)
