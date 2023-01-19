@@ -301,7 +301,7 @@ rates and outcomes if you were to design your program similarly.
 
     #print(sub_services)
 
-    channels = temp['Channel']
+    channels = results['Channel']
     #print(channels)
     #chnls = pd.DataFrame(channels)
     #chnls.columns = ['Channels']
