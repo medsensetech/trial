@@ -122,7 +122,8 @@ rates and outcomes if you were to design your program similarly.
     #print(tag)
 
     #Step 2: For each program objective, select unique Matched Services (Matrix)
-    results = results.head(1)
+    results = results.head(1) 
+    #Iterate through all results of the serial number - select the best
     program_objective = []
 
     for i in tag:
