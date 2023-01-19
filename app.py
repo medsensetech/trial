@@ -88,7 +88,6 @@ rates and outcomes if you were to design your program similarly.
     def remove_dup(x):
         return list(dict.fromkeys(x))
     if submit_button:
-        st.write("TRIAL")
         st.write("Based on data from", no_participants, "across ", no_programs, "of programs globally, here are the programs that most closely match your selection \ncriteria.")
         st.write("Best case (from the top 10 programs that most closely match your selection criteria)")
         col1, col2, col3 = st.columns(3)
