@@ -568,8 +568,8 @@ rates and outcomes if you were to design your program similarly.
             if proactive_support_window in ('Ongoing'):
                 no_pts_ongoing_2 = ca_4 + no_pts_ongoing_1*0.8
                 no_pts_ongoing_3 = ca_4 + no_pts_ongoing_2*0.8
-                no_pts_ongoing_4 = no_pts_ongoing_3*1.8
-                no_pts_ongoing_5 = round(no_pts_ongoing_4*1.8,1)
+                no_pts_ongoing_4 = ca_4 + no_pts_ongoing_3*0.8
+                no_pts_ongoing_5 = ca_4 + no_pts_ongoing_4*0.8)
             else:
                 no_pts_ongoing_2 = no_pts_ongoing_1
                 no_pts_ongoing_3 = no_pts_ongoing_2
