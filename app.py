@@ -728,7 +728,7 @@ rates and outcomes if you were to design your program similarly.
         st.metric(label="Total Estimated Cost", value=total_cost, delta=ca_8,
         delta_color="off", help='Estimated cost compared to budget')
         
-        st.write('Based on the selected design settings, with a program adoption rate of', math.trunc((adoption_1)*100),'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
+        st.write('Based on the selected design settings, with a program adoption rate of', math.trunc((adoption_1)),'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
         st.table(ca_output)
 
         
