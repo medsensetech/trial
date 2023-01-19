@@ -302,6 +302,8 @@ rates and outcomes if you were to design your program similarly.
     #print(sub_services)
 
     channels = results['Channel']
+    st.write(results)
+    st.write(channels)
     #print(channels)
     #chnls = pd.DataFrame(channels)
     #chnls.columns = ['Channels']
