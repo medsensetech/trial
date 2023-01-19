@@ -69,7 +69,8 @@ rates and outcomes if you were to design your program similarly.
 
         output = results.drop('Sr', axis=1)
         output = output.drop('Sum', axis=1)
-
+        
+        st.write(results)
         no_participants = results['Participants'].sum()
         no_programs = results['Condition'].count()
 
