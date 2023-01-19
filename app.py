@@ -437,8 +437,9 @@ rates and outcomes if you were to design your program similarly.
 
     display_outcome = scale(matched_service, matched_serv, channels, chnls, closest_outcome)
 
+    if submit_button2:
 
-    st.metric(label="Opportunity Calculator (% improvement in outcome)", value=display_outcome)
+        st.metric(label="Opportunity Calculator (% improvement in outcome)", value=display_outcome)
     
     st.header("Concept Analyser")
     
