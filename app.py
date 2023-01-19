@@ -495,53 +495,49 @@ rates and outcomes if you were to design your program similarly.
     
         st.write('**Services costs (edit the default values as appropriate based on known or expected amounts for these services)**')
         st.write('Setup (year 1) - fixed')
-        c7, c8, c9, c10, c11, c12, c13, c14 = st.columns(8)
+        c7, c8, c9, c10, c11, c12, c13 = st.columns(7)
         a3 = c7.number_input("Program Management", value=20000)
-        b3 = c8.number_input("In-person", value=60000)
-        c3 = c9.number_input("Telephone (Clin.)", value=30000)
-        d3 = c10.number_input("Telephone (non-clin.)", value=0)
+        b3 = c8.number_input("In-person & Telephone (clinical)", value=60000)
+        c3 = c9.number_input("Welcome pack", value=0)
+        d3 = c10.number_input("Website", value=30000)
         e3 = c11.number_input("Email/SMS/Mail", value=5000)
-        f3 = c12.number_input("Website", value=30000)
-        g3 = c13.number_input("App", value=100000)
-        h3 = c14.number_input("Other", value=5000)
+        f3 = c12.number_input("Partner organisations", value=5000)
+        g3 = c13.number_input("Other", value=0)
         
         st.write('Ongoing (year 2+) - fixed')
-        c15, c16, c17, c18, c19, c20, c21, c22 = st.columns(8)
-        a4 = c15.number_input("Program Management ", value=20000)
-        b4 = c16.number_input("In-person ", value=20000)
-        c4 = c17.number_input("Telephone (Clin.) ", value=10000)
-        d4 = c18.number_input("Telephone (non-clin.) ", value=0)
-        e4 = c19.number_input("Email/SMS/Mail ", value=5000)
-        f4 = c20.number_input("Website ", value=15000)
-        g4 = c21.number_input("App ", value=10000)
-        h4 = c22.number_input("Other ", value=5000)
+        c14, c15, c16, c17, c18, c19, c20 = st.columns(7)
+        a4 = c14.number_input("Program Management", value=20000)
+        b4 = c15.number_input("In-person & Telephone (clinical)", value=20000)
+        c3 = c16.number_input("Welcome pack", value=0)
+        d3 = c17.number_input("Website", value=15000)
+        e3 = c18.number_input("Email/SMS/Mail", value=5000)
+        f3 = c19.number_input("Partner organisations", value=2500)
+        g3 = c20.number_input("Other", value=0)
         
         st.write('Annual fee per patient - variable')
-        c23, c24, c25, c26, c27, c28, c29, c30 = st.columns(8)
-        a5 = c23.number_input("Program Management  ", value=50)
-        b5 = c24.number_input("In-person  ", value=600)
-        c5 = c25.number_input("Telephone (Clin.)  ", value=200)
-        d5 = c26.number_input("Telephone (non-clin.)  ", value=0)
-        e5 = c27.number_input("Email/SMS/Mail  ", value=50)
-        f5 = c28.number_input("Website  ", value=0)
-        g5 = c29.number_input("App  ", value=0)
-        h5 = c30.number_input("Other  ", value=0)       
+        c21, c22, c23, c24, c25, c26, c27 = st.columns(7)
+        a5 = c21.number_input("Program Management", value=50)
+        b5 = c22.number_input("In-person & Telephone (clinical)", value=600)
+        c5 = c23.number_input("Welcome pack", value=100)
+        d5 = c24.number_input("Website", value=0)
+        e5 = c25.number_input("Email/SMS/Mail", value=10)
+        f5 = c26.number_input("Partner organisations", value=0)
+        g5 = c27.number_input("Other", value=0)      
         
         st.write('Annual cost - variable')
-        c30, c31, c32, c33, c34, c35, c36, c37 = st.columns(8)
-        a6 = c30.number_input("Program Management   ", value=5000)
-        b6 = c31.number_input("In-person   ", value=60000)
-        c6 = c32.number_input("Telephone (Clin.)   ", value=20000)
-        d6 = c33.number_input("Telephone (non-clin.)   ", value=0)
-        e6 = c34.number_input("Email/SMS/Mail   ", value=5000)
-        f6 = c35.number_input("Website   ", value=0)
-        g6 = c36.number_input("App   ", value=0)
-        h6 = c37.number_input("Other   ", value=0)
+        c28, c29, c30, c31, c32, c33, c34 = st.columns(7)
+        a6 = c21.number_input("Program Management", value=10000)
+        b6 = c22.number_input("In-person & Telephone (clinical)", value=120000)
+        c6 = c23.number_input("Welcome pack", value=20000)
+        d6 = c24.number_input("Website", value=0)
+        e6 = c25.number_input("Email/SMS/Mail", value=2000)
+        f6 = c26.number_input("Partner organisations", value=0)
+        g6 = c27.number_input("Other", value=0) 
         
         
         program_costs = a1 + b1 +c1 + a2 + b2 + c2
-        services_cost_setup = a3 + b3 + c3 + d3 + e3 + f3 + g3 + h3
-        annual_var_services_cost = a6 + b6 + c6 + d6 + e6 + f6 + g6 + h6
+        services_cost_setup = a3 + b3 + c3 + d3 + e3 + f3 + g3
+        annual_var_services_cost = a6 + b6 + c6 + d6 + e6 + f6 + g6
         
         total_cost = program_costs + services_cost_setup + annual_var_services_cost
 
@@ -558,6 +554,8 @@ rates and outcomes if you were to design your program similarly.
         adoption_3 = ca_5/(ca_6)
         
         def ca(adoption_rate, annual_growth, additional_units):
+            
+            annual_growth = annual_growth/100
 
             no_pts_new_1 = round(ca_3,1)
             no_pts_new_2 = ca_2
@@ -684,11 +682,11 @@ rates and outcomes if you were to design your program similarly.
             total_costs_5 = round(fixed_setup_costs_5 + var_costs_5,2)
             total_costs_total = total_costs_1 + total_costs_2 + total_costs_3 + total_costs_4 + total_costs_5
 
-            rev_1 = no_pts_ongoing_1*ca_7*ca_6
-            rev_2 = no_pts_ongoing_2*ca_7*ca_6
-            rev_3 = no_pts_ongoing_3*ca_7*ca_6
-            rev_4 = no_pts_ongoing_4*ca_7*ca_6
-            rev_5 = no_pts_ongoing_5*ca_7*ca_6
+            rev_1 = no_pts_ongoing_1*ca_7*additional_units
+            rev_2 = no_pts_ongoing_2*ca_7*additional_units
+            rev_3 = no_pts_ongoing_3*ca_7*additional_units
+            rev_4 = no_pts_ongoing_4*ca_7*additional_units
+            rev_5 = no_pts_ongoing_5*ca_7*additional_units
             rev_total = rev_1 + rev_2 + rev_3 + rev_4 + rev_5
 
             net_1 = round(rev_1 - total_costs_1,1)
