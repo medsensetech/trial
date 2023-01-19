@@ -203,9 +203,6 @@ rates and outcomes if you were to design your program similarly.
             matched_service.append("Other specify")
 
     matched_service = remove_dup(matched_service)
-    st.write('MATCHED SERVICE')
-    st.write(matched_service)
-
     #print(matched_service)
 
 
@@ -344,9 +341,7 @@ rates and outcomes if you were to design your program similarly.
         'Sub-services',
         ['Adherence service','AHPs services','App','Appointment preparation','Approval/Administrative support','Co-pay','Coaching/Counseling','Disposal','Dose support (inc. induction, FDO, titration)','Dose/inj training','Drug administraion/infusion (clinic)','Drug administraion/infusion (home)','e-diary/patient story','Effective HCP Appointments','Email/SMS/Mail','Free-Supply','Goal Setting','HCP/AHP training','Help-line (non-clinical)','Home Delivery/Order','Individual care plan','Insurance support','Logistics-travel','Medicine Usage Support','NA','Nurse/AHP assistance','Partner organisations','Patient care coordination','Patient communities-support','Patient-segmentation','Pharmacy supply','PSP-patient feedback','Psychological intervention','Reminders','Telemonitoring','Testing','Tools-Kits','Vouchers','Website','Welcome Pack', 'Other specify'],
         sub_services)
-        
-        st.write(channels)
-                               
+                                       
         chnls = st.multiselect(
         'Channels',
         ['App','Digital (other)','Email/SMS/Mail','Inperson','NA','Other specify','Partner organisations','Print','Telephone (clinical)','Telephone (non-clinical)','Third-party tool/software','Website','Welcome Pack'],
@@ -436,7 +431,7 @@ rates and outcomes if you were to design your program similarly.
 
 
     display_outcome = scale(matched_service, matched_serv, channels, chnls, closest_outcome)
-    display_outcome = math.trunc((display_outcome)*100))
+    display_outcome = math.trunc((display_outcome*100))
 
     if submit_button2:
 
