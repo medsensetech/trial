@@ -74,7 +74,7 @@ rates and outcomes if you were to design your program similarly.
         
         results['Participants'] = results['Participants'].astype('int')
         no_participants = results['Participants'].sum()
-        no_programs = results['Condition'].count()
+        #no_programs = results['Condition'].count()
         no_programs = 55
 
         adoption_rate = results['Adoption'].max()
