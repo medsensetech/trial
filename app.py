@@ -465,12 +465,12 @@ rates and outcomes if you were to design your program similarly.
         
         matched_serv2 = st.multiselect(
         'Services',
-        ['Patient Education', 'Side effects/Comorbitity Support', 'Medicine Usage Support', 'Effective HCP Appointments', 'Motivation-Confidence', 'Medicine Supplies/Logistics','Financial','Psychosocial-Emotional','HCP-Needs','Carer Enablement','Other specify'],
+        ['Carer Enablement','Effective HCP Appointments','Financial','HCP-Needs','Medicine Supplies/Logistics','Medicine Usage Support','Motivation-Confidence','Other specify','Patient Education','Psychosocial-Emotional','Side effects/Comobidities Support', 'Side effects/Comorbitity Support'],
         matched_service)
         
         chnls2 = st.multiselect(
         'Channels',
-        [],
+        ['App','Digital (other)','Email/SMS/Mail','Inperson','NA','Other specify','Partner organisations','Print','Telephone (clinical)','Telephone (non-clinical)','Third-party tool/software','Website','Welcome Pack'],
         channels)  
         
         st.write('**Financial**')
