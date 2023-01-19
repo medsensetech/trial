@@ -436,6 +436,7 @@ rates and outcomes if you were to design your program similarly.
 
 
     display_outcome = scale(matched_service, matched_serv, channels, chnls, closest_outcome)
+    display_outcome = math.trunc((display_outcome)*100))
 
     if submit_button2:
 
