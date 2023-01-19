@@ -94,7 +94,7 @@ rates and outcomes if you were to design your program similarly.
         col3.metric("Outcome (%)", outcome)
         display_output = output.pop(output.columns[0])
         st.write("Matches are based on route of administration, condition, therapy area and molecule, in this order.")
-        st.write(display_output)
+        st.write(output)
 
         
     st.header("Concept Builder")
