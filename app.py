@@ -108,6 +108,7 @@ rates and outcomes if you were to design your program similarly.
     #print(program_strategy)
 
     for i in p_strategy:
+        st.write(p_strategy)
         if i in ("Supporting quality use of medicines"):
             tag.append("Med")
         elif i in ("Providing patient support at-par with industry standard"):
