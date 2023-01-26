@@ -68,7 +68,7 @@ rates and outcomes if you were to design your program similarly.
         results = firsts.head(10)
 
         #output = results.drop('Sr', axis=1)
-        output = output.drop('Sum', axis=1)
+        output = results.drop('Sum', axis=1)
                 
         results['Participants'] = results['Participants'].astype('int')
         no_participants = results['Participants'].sum()
