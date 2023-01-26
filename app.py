@@ -309,10 +309,7 @@ rates and outcomes if you were to design your program similarly.
 
     channels = results['Channel']
     st.write(results)
-    
-    for 'Sr' in results:
-        if sr in results.Sr.values
-    
+        
     st.write(channels)
     #print(channels)
     #chnls = pd.DataFrame(channels)
