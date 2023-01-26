@@ -294,7 +294,7 @@ rates and outcomes if you were to design your program similarly.
     temp = results[results.Services.isin(matched_service)]
     sr = results2['Sr']
     st.write(sr)
-    top_result = results[results.Sr.isin(sr)]
+    top_result = sorted_df[sorted_df.Sr.isin(sr)]
     st.write(top_result)
 
     print(temp)
