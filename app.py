@@ -292,6 +292,7 @@ rates and outcomes if you were to design your program similarly.
 
     temp = results[results.Services.isin(matched_service)]
     sr = results2['Sr']
+    str.write(sr)
     
     top_result = results[results.Sr.isin(sr)]
     str.write(top_result)
