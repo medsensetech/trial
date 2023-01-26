@@ -122,7 +122,7 @@ rates and outcomes if you were to design your program similarly.
     #print(tag)
 
     #Step 2: For each program objective, select unique Matched Services (Matrix)
-    results = results.head(1) 
+    results2 = results.head(1) 
     #Iterate through all results of the serial number - select the best
     program_objective = []
 
@@ -291,6 +291,11 @@ rates and outcomes if you were to design your program similarly.
     serv.columns = ['Services']
 
     temp = results[results.Services.isin(matched_service)]
+    sr = results2['Sr']
+    
+    top_result = results[results.Sr.isin(sr)]
+    str.write(top_result)
+
     print(temp)
 
     sub_services = temp['Sub Services']
@@ -304,6 +309,10 @@ rates and outcomes if you were to design your program similarly.
 
     channels = results['Channel']
     st.write(results)
+    
+    for 'Sr' in results:
+        if sr in results.Sr.values
+    
     st.write(channels)
     #print(channels)
     #chnls = pd.DataFrame(channels)
