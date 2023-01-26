@@ -291,8 +291,7 @@ rates and outcomes if you were to design your program similarly.
     serv.columns = ['Services']
 
     temp = results[results.Services.isin(matched_service)]
-    sr = results2['Sr']
-    str.write(sr)
+    str.write(results2['Sr'])
     
     top_result = results[results.Sr.isin(sr)]
     str.write(top_result)
