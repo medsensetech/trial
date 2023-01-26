@@ -123,7 +123,7 @@ rates and outcomes if you were to design your program similarly.
 
     #Step 2: For each program objective, select unique Matched Services (Matrix)
     results2 = results.head(1) 
-    str.write(results2)
+    st.write(results2)
     #Iterate through all results of the serial number - select the best
     program_objective = []
 
