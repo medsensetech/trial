@@ -123,6 +123,7 @@ rates and outcomes if you were to design your program similarly.
 
     #Step 2: For each program objective, select unique Matched Services (Matrix)
     results2 = results.head(1) 
+    str.write(results2)
     #Iterate through all results of the serial number - select the best
     program_objective = []
 
@@ -291,7 +292,6 @@ rates and outcomes if you were to design your program similarly.
     serv.columns = ['Services']
 
     temp = results[results.Services.isin(matched_service)]
-    str.write(results2)
     
     top_result = results[results.Sr.isin(sr)]
     str.write(top_result)
