@@ -307,13 +307,13 @@ rates and outcomes if you were to design your program similarly.
     channels = top_result['Channel'].unique()
     #st.write(results)
         
-    st.write(channels)
     #print(channels)
     #chnls = pd.DataFrame(channels)
     #chnls.columns = ['Channels']
     #chnls = channels.drop_duplicates()
     channels = pd.DataFrame(channels)
     channels = channels.values.tolist()
+    st.write(channels)
 
     
     
