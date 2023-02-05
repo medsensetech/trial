@@ -478,7 +478,7 @@ rates and outcomes if you were to design your program similarly.
         
         chnls2 = st.multiselect(
         'Channels',
-        ['App','Digital (other)','Email/SMS/Mail','Inperson','NA','Other specify','Partner organisations','Print','Telephone (clinical)','Telephone (non-clinical)','Third-party tool/software','Website','Welcome Pack'],
+        ['App','Digital (other)','Email/SMS/Mail','Inperson','NA', '<NA>', 'Other specify','Partner organisations','Print','Telephone (clinical)','Telephone (non-clinical)','Third-party tool/software','Website','Welcome Pack'],
         channels)  
         
         st.write('**Financial**')
