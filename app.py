@@ -314,6 +314,8 @@ rates and outcomes if you were to design your program similarly.
     #channels = pd.DataFrame(channels)
     channels = chnls.values.tolist()
     st.write(channels)
+    st.write(pt_needs)
+    st.write(matched_service)
 
     
     
