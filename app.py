@@ -312,7 +312,7 @@ rates and outcomes if you were to design your program similarly.
     #chnls = pd.DataFrame(channels)
     #chnls.columns = ['Channels']
     #chnls = channels.drop_duplicates()
-    channels = channels.values.tolist()
+    #channels = channels.values.tolist()
 
     
     
