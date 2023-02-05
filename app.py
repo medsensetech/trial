@@ -304,7 +304,7 @@ rates and outcomes if you were to design your program similarly.
 
     #print(sub_services)
 
-    channels = top_result['Channel'].unique()
+    channels = top_result.drop_duplicates(subset=['Channel'], keep=False)
     #st.write(results)
         
     #print(channels)
@@ -313,7 +313,7 @@ rates and outcomes if you were to design your program similarly.
     #chnls = channels.drop_duplicates()
     #channels = pd.DataFrame(channels)
     #channels = [val for sublist in channels for val in sublist]
-    channels = channels.tolist()
+    channels = channels.values.tolist()
     st.write(channels)
 
     
@@ -354,7 +354,7 @@ rates and outcomes if you were to design your program similarly.
                                        
         chnls = st.multiselect(
         'Channels',
-        ['App','Digital (other)','Email/SMS/Mail','"Inperson"','NA','<NA>', 'null', 'NaN', 'Other specify','Partner organisations','Print','"Telephone (clinical)"','"Telephone (non-clinical)"','Third-party tool/software','Website','Welcome Pack'],
+        ['App','Digital (other)','Email/SMS/Mail','Inperson','NA','<NA>', 'null', 'NaN', 'Other specify','Partner organisations','Print','"Telephone (clinical)"','"Telephone (non-clinical)"','Third-party tool/software','Website','Welcome Pack'],
         channels)
         
         submit_button2 = st.form_submit_button('View Results')
