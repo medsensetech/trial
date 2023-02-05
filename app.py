@@ -207,6 +207,9 @@ rates and outcomes if you were to design your program similarly.
             matched_service.append("HCP-Needs")
         else:
             matched_service.append("Other specify")
+    
+    def Extract(lst):
+        return [item[0] for item in lst]
 
             
     matched_service_temp = remove_dup(matched_service)
@@ -214,13 +217,12 @@ rates and outcomes if you were to design your program similarly.
     matched_service_temp = pd.DataFrame (matched_service_temp, columns = ['Services'])
     frames = [services_top, matched_service_temp]
     services = pd.concat(frames)
-    services = services.drop('Services')
+    services = services.drop('Services', axis=1)
     services = services.drop_duplicates()
     services = services.dropna()
-    
-    matched_service = [item for sublist in services for item in sublist]
 
     matched_service = services.tolist()
+    matched_service = Extract(matched_service)
     st.write(matched_service)
 
 
