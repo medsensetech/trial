@@ -214,7 +214,7 @@ rates and outcomes if you were to design your program similarly.
     matched_service_temp = pd.DataFrame (matched_service_temp, columns = ['Services'])
     frames = [services_top, matched_service_temp]
     services = pd.concat(frames)
-    services = services.drop('Services', axis=1)
+    services = services.drop('Services')
     services = services.drop_duplicates()
     services = services.dropna()
     
