@@ -208,9 +208,6 @@ rates and outcomes if you were to design your program similarly.
     matched_service = remove_dup(matched_service)
     #print(matched_service)
 
-    st.write(tag)
-
-
 
     #Step 3: For each matched service, display patient needs 
     pt_needs = []
@@ -293,7 +290,6 @@ rates and outcomes if you were to design your program similarly.
 
     temp = results[results.Services.isin(matched_service)]
     sr = results2['Sr']
-    st.write(sr)
     top_result = sorted_df[sorted_df.Sr.isin(sr)]
     st.write(top_result)
 
@@ -308,8 +304,8 @@ rates and outcomes if you were to design your program similarly.
 
     #print(sub_services)
 
-    channels = results['Channel']
-    st.write(results)
+    channels = top_result['Channel'].unique()
+    #st.write(results)
         
     st.write(channels)
     #print(channels)
