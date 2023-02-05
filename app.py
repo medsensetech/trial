@@ -295,7 +295,8 @@ rates and outcomes if you were to design your program similarly.
 
     print(temp)
 
-    sub_services = temp['Sub Services']
+    #sub_services = temp['Sub Services']
+    sub_services = top_result['Sub Services']
 
     #print(sub_services)
 
