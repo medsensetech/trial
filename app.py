@@ -218,7 +218,7 @@ rates and outcomes if you were to design your program similarly.
     services = services.drop_duplicates()
     services = services.dropna()
 
-    matched_service = services.values.tolist()
+    matched_service = services.tolist()
     st.write(matched_service)
 
 
