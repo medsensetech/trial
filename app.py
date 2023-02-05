@@ -311,9 +311,9 @@ rates and outcomes if you were to design your program similarly.
     #chnls = pd.DataFrame(channels)
     #chnls.columns = ['Channels']
     #chnls = channels.drop_duplicates()
-    channels = pd.DataFrame(channels)
+    #channels = pd.DataFrame(channels)
     #channels = [val for sublist in channels for val in sublist]
-    channels = channels.values.tolist()
+    channels = channels.tolist()
     st.write(channels)
 
     
