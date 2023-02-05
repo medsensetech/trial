@@ -304,7 +304,7 @@ rates and outcomes if you were to design your program similarly.
 
     #print(sub_services)
 
-    channels = top_result['Channel'].unique()
+    channels = top_result['Channel']
     #st.write(results)
         
     #print(channels)
