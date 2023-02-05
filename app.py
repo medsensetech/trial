@@ -311,9 +311,9 @@ rates and outcomes if you were to design your program similarly.
     chnls = pd.DataFrame(channels)
     chnls.columns = ['Channels']
     chnls = channels.drop_duplicates()
+    chnls = chnls.dropna()
     #channels = pd.DataFrame(channels)
     channels = chnls.values.tolist()
-    channels = [x for x in channels if x != '<NA>']
     st.write(channels)
     st.write(pt_needs)
     st.write(matched_service)
