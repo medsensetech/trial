@@ -301,6 +301,8 @@ rates and outcomes if you were to design your program similarly.
     #print(sub_services)
 
     subserv = sub_services.drop_duplicates()
+    subserv = subserv.dropna()
+
     sub_services = subserv.values.tolist()
 
     #print(sub_services)
