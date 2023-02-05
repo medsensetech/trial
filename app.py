@@ -313,7 +313,7 @@ rates and outcomes if you were to design your program similarly.
     chnls = channels.drop_duplicates()
     #channels = pd.DataFrame(channels)
     channels = chnls.values.tolist()
-    channels = list(filter(None, channels))
+    channels = [x for x in channels if x != 'nan']
     st.write(channels)
     st.write(pt_needs)
     st.write(matched_service)
