@@ -298,7 +298,7 @@ rates and outcomes if you were to design your program similarly.
     sub_services_temp = temp['Sub Services']
     sub_services_top = top_result['Sub Services']
     frames = [sub_services_temp, sub_services_top]
-    sub_services = df.concat(frames)
+    sub_services = pd.concat(frames)
 
     #print(sub_services)
 
