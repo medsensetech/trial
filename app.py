@@ -304,7 +304,7 @@ rates and outcomes if you were to design your program similarly.
 
     #print(sub_services)
 
-    channels = top_result.drop_duplicates(subset=['Channel'], keep=False)
+    channels = top_result.drop_duplicates(subset=['Channel'], keep=True)
     #st.write(results)
         
     #print(channels)
