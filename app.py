@@ -217,6 +217,8 @@ rates and outcomes if you were to design your program similarly.
     services = services.drop('Services', axis=1)
     services = services.drop_duplicates()
     services = services.dropna()
+    
+    matched_service = [item for sublist in services for item in sublist]
 
     matched_service = services.tolist()
     st.write(matched_service)
