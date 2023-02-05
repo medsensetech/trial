@@ -151,6 +151,9 @@ rates and outcomes if you were to design your program similarly.
 
     #progobj = pd.DataFrame(program_objective)
     #progobj.columns = ['Program Objective']
+    sr = results2['Sr']
+    top_result = sorted_df[sorted_df.Sr.isin(sr)]
+    
 
     matched_service = []
 
@@ -205,7 +208,18 @@ rates and outcomes if you were to design your program similarly.
         else:
             matched_service.append("Other specify")
 
-    matched_service = remove_dup(matched_service)
+            
+    matched_service_temp = remove_dup(matched_service)
+    services_top = top_result['Services']
+    matched_service_temp = pd.DataFrame (matched_service_temp, columns = ['Services'])
+    frames = [services_top, matched_service_temp]
+    services = pd.concat(frames)
+    services = services.drop_duplicates()
+    services = services.dropna()
+
+    matched_service = services.values.tolist()
+
+
     #print(matched_service)
 
 
@@ -289,8 +303,6 @@ rates and outcomes if you were to design your program similarly.
     serv.columns = ['Services']
 
     temp = results[results.Services.isin(matched_service)]
-    sr = results2['Sr']
-    top_result = sorted_df[sorted_df.Sr.isin(sr)]
     st.write(top_result)
 
     print(temp)
