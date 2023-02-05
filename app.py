@@ -213,7 +213,7 @@ rates and outcomes if you were to design your program similarly.
     services_top = top_result['Services']
     matched_service_temp = pd.DataFrame (matched_service_temp, columns = ['Services'])
     st.write(matched_service_temp)
-    st.write(servuces_top)
+    st.write(services_top)
     frames = [services_top, matched_service_temp]
     services = pd.concat(frames)
     services = services.drop_duplicates()
