@@ -304,7 +304,7 @@ rates and outcomes if you were to design your program similarly.
 
     #print(sub_services)
 
-    channels = top_result.drop_duplicates(subset='Channel')
+    channels = top_result['Channel'].unique()
     #st.write(results)
         
     #print(channels)
@@ -313,7 +313,6 @@ rates and outcomes if you were to design your program similarly.
     #chnls = channels.drop_duplicates()
     #channels = pd.DataFrame(channels)
     #channels = [val for sublist in channels for val in sublist]
-    channels = channels.values.tolist()
     st.write(channels)
 
     
