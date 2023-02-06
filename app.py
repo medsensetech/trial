@@ -221,11 +221,11 @@ rates and outcomes if you were to design your program similarly.
     services = services_top.drop_duplicates()
     services = services.dropna()
     services = services.values.tolist()
-    st.write(services)
+    #st.write(services)
 
     #matched_service = matched_service_temp.values.tolist()
     #matched_service = Extract(matched_service)
-    st.write(matched_service)
+    #st.write(matched_service)
 
 
     #print(matched_service)
@@ -390,7 +390,7 @@ rates and outcomes if you were to design your program similarly.
     
     
     channels = top_result['Channel']
-    st.write(results)
+    #st.write(results)
         
     st.write(channels)
     #print(channels)
@@ -459,9 +459,9 @@ rates and outcomes if you were to design your program similarly.
         
         
     def scale(match_services, selection_services, match_channel, selection_channel, outcome):
-        st.write(match_channel)
-        st.write(selection_channel)
-        st.write(outcome)
+        #st.write(match_channel)
+        #st.write(selection_channel)
+        #st.write(outcome)
         if len(selection_services) > len(match_services):
             n = len(selection_services) - len(match_services)
             service_scaling = (1.1)**n
@@ -529,10 +529,10 @@ rates and outcomes if you were to design your program similarly.
                 match_channel_factors.append(0.4)
             else:
                 match_channel_factors.append(1)
-        st.write(selection_channel_factors)
-        st.write(match_channel_factors)
+        #st.write(selection_channel_factors)
+        #st.write(match_channel_factors)
         channel_scaling = max(selection_channel_factors)/max(match_channel_factors)
-        st.write(channel_scaling)
+        #st.write(channel_scaling)
 
         new_outcome = new_outcome*channel_scaling
 
