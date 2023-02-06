@@ -328,18 +328,30 @@ rates and outcomes if you were to design your program similarly.
     sub_services = subserv.values.tolist()
 
     #print(sub_services)
+    
+    
+    channels = results['Channel']
+    st.write(results)
+        
+    st.write(channels)
+    #print(channels)
+    #chnls = pd.DataFrame(channels)
+    #chnls.columns = ['Channels']
+    chnls = channels.drop_duplicates()
+    channels = chnls.values.tolist()
 
-    channels = top_result['Channel']
+
+    channels_top = top_result['Channel']
     #st.write(results)
         
     #print(channels)
-    chnls = pd.DataFrame(channels)
-    chnls.columns = ['Channels']
-    chnls = channels.drop_duplicates()
-    chnls = chnls.dropna()
+    chnls_top = pd.DataFrame(channels_top)
+    chnls_top.columns = ['Channels']
+    chnls_top = channels_top.drop_duplicates()
+    chnls_top = chnls_top.dropna()
     #channels = pd.DataFrame(channels)
-    channels = chnls.values.tolist()
-    st.write(channels)
+    channels_top = chnls_top.values.tolist()
+    st.write(channels_top)
     st.write(pt_needs)
     st.write(matched_service)
 
