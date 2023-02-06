@@ -400,6 +400,8 @@ rates and outcomes if you were to design your program similarly.
         
         
     def scale(match_services, selection_services, match_channel, selection_channel, outcome):
+        st.write(match_channel)
+        st.write(selection_channel)
         st.write(outcome)
         if len(selection_services) > len(match_services):
             n = len(selection_services) - len(match_services)
