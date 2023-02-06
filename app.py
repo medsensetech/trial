@@ -408,6 +408,9 @@ rates and outcomes if you were to design your program similarly.
             service_scaling = 1
         else:
             n = len(match_services) - len(selection_services)
+            st.write(match_services)
+            st.write(selection_services)
+            st.write(n)
             service_scaling = n/1.1
         print(service_scaling)
         new_outcome = outcome*service_scaling
