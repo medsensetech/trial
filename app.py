@@ -330,7 +330,7 @@ rates and outcomes if you were to design your program similarly.
     #print(sub_services)
     
     
-    channels = results['Channel']
+    channels = temp['Channel']
     st.write(results)
         
     st.write(channels)
