@@ -123,7 +123,7 @@ rates and outcomes if you were to design your program similarly.
 
     #Step 2: For each program objective, select unique Matched Services (Matrix)
     results2 = results.head(1) 
-    st.write(results2)
+    #st.write(results2)
     #Iterate through all results of the serial number - select the best
     program_objective = []
 
@@ -392,7 +392,7 @@ rates and outcomes if you were to design your program similarly.
     channels = top_result['Channel']
     #st.write(results)
         
-    st.write(channels)
+    #st.write(channels)
     #print(channels)
     #chnls = pd.DataFrame(channels)
     #chnls.columns = ['Channels']
@@ -469,14 +469,14 @@ rates and outcomes if you were to design your program similarly.
             service_scaling = 1
         else:
             n = len(match_services) - len(selection_services)
-            st.write(match_services)
-            st.write(selection_services)
-            st.write(n)
+            #st.write(match_services)
+            #st.write(selection_services)
+            #st.write(n)
             service_scaling = n/1.1
         print(service_scaling)
         new_outcome = outcome*service_scaling
-        st.write(service_scaling)
-        st.write(new_outcome)
+        #st.write(service_scaling)
+        #st.write(new_outcome)
 
         selection_channel_factors = []
         for i in selection_channel:
@@ -503,7 +503,7 @@ rates and outcomes if you were to design your program similarly.
             else:
                 selection_channel_factors.append(1)
                 
-        st.write(selection_channel_factors)
+        #st.write(selection_channel_factors)
 
         match_channel_factors = []
         for i in match_channel:
