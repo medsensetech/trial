@@ -293,13 +293,72 @@ rates and outcomes if you were to design your program similarly.
             hcp_needs.append("HCP training")
         else:
             hcp_needs.append("Other specify")
-
-
     hcp_needs = remove_dup(hcp_needs)
     #hcp = pd.DataFrame(hcp_needs)
     #print(hcp_needs)
     #hcp.columns = ['HCP Needs']
     #Step 5: Unique values of sub-services and channels 
+    
+    subservices = []
+    for i in matched_service:
+        if i in "Patient Education":
+            subservices.append("Welcome Pack")
+            subservices.append("Email/SMS/Mail")
+            subservices.append("Website")
+            subservices.append("App")
+            subservices.append("Help-line (non-clinical)")
+            subservices.append("Nurse/AHP assistance")
+            subservices.append("Partner organisations")
+        elif i in "Side effects/Comobidities Support":
+            subservices.append("AHPs services")
+            subservices.append("Nurse/AHP assistance")
+            subservices.append("Welcome Pack")
+            subservices.append("Tools-Kits")
+            subservices.append("Partner organisations")
+        elif i in "Medicine Usage Support":
+            subservices.append("Reminders")
+            subservices.append("Dose/inj training")
+            subservices.append("Dose support (inc. induction, FDO, titration)")
+            subservices.append("Telemonitoring")
+            subservices.append("Testing")
+            subservices.append("Drug administraion/infusion (clinic)")
+            subservices.append("Drug administraion/infusion (home)")
+            subservices.append("Adherence services")
+        elif i in "Medicine Supplies/Logistics":
+            subservices.append("Pharmacy supply")
+            subservices.append("Home Delivery/Order")
+            subservices.append("Disposal")
+        elif i in "Effective HCP Appointments":
+            subservices.append("Patient care coordination")
+            subservices.append("Appointment preparation")
+            subservices.append("Logistics-travel")
+        elif i in "Motivation-Confidence":
+            subservices.append("Coaching/Counseling")
+            subservices.append("Individual care plan")
+            subservices.append("Email/SMS/Mail")
+            subservices.append("Goal Setting")
+        elif i in "Psychosocial-Emotional":
+            subservices.append("Patient communities-support")
+            subservices.append("e-diary/patient story")
+            subservices.append("Psychological intervention")
+            subservices.append("Patient-segmentation")
+        elif i in "Financial":
+            subservices.append("Co-pay")
+            subservices.append("Vouchers")
+            subservices.append("Free-supply")
+            subservices.append("Insurance support")
+        elif i in "HCP-Needs":
+            subservices.append("PSP-patient feedback")
+            subservices.append("Approval/administrative support")
+            subservices.append("HCP/AHP training")
+            subservices.append("Effective HCP Appointments")
+            subservices.append("Medicine Usage Support")
+                        
+        else:
+            subservices.append("Other specify")
+    subservices = remove_dup(subservices)
+   
+            
 
     #matched_serv1 = remove_dup(matched_service)
     #matched_serv = pd.DataFrame(matched_serv1)
@@ -315,17 +374,17 @@ rates and outcomes if you were to design your program similarly.
 
     print(temp)
 
-    sub_services = temp['Sub Services']
+    #sub_services = temp['Sub Services']
     #sub_services_top = top_result['Sub Services']
     #frames = [sub_services_temp, sub_services_top]
     #sub_services = pd.concat(frames)
 
     #print(sub_services)
 
-    subserv = sub_services.drop_duplicates()
-    subserv = subserv.dropna()
+    #subserv = sub_services.drop_duplicates()
+    #subserv = subserv.dropna()
 
-    sub_services = subserv.values.tolist()
+    #sub_services = subserv.values.tolist()
 
     #print(sub_services)
     
