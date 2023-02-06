@@ -220,6 +220,7 @@ rates and outcomes if you were to design your program similarly.
     #services = services.drop('Services', axis=1)
     services = services_top.drop_duplicates()
     services = services.dropna()
+    services = services.values.tolist()
     st.write(services)
 
     #matched_service = matched_service_temp.values.tolist()
