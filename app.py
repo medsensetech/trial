@@ -341,7 +341,7 @@ rates and outcomes if you were to design your program similarly.
     channels = chnls.values.tolist()
 
 
-    channels_top = top_result['Channel']
+    channels = top_result['Channel']
     #st.write(results)
         
     #print(channels)
@@ -350,10 +350,10 @@ rates and outcomes if you were to design your program similarly.
     chnls_top = channels_top.drop_duplicates()
     chnls_top = chnls_top.dropna()
     #channels = pd.DataFrame(channels)
-    channels_top = chnls_top.values.tolist()
-    st.write(channels_top)
-    st.write(pt_needs)
-    st.write(matched_service)
+    channels = chnls_top.values.tolist()
+    #st.write(channels_top)
+    #st.write(pt_needs)
+    #st.write(matched_service)
 
     
     
