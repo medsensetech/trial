@@ -214,15 +214,15 @@ rates and outcomes if you were to design your program similarly.
             
     matched_service_temp = remove_dup(matched_service)
     services_top = top_result['Services']
-    matched_service_temp = pd.DataFrame (matched_service_temp, columns = ['Services'])
-    frames = [services_top, matched_service_temp]
-    services = pd.concat(frames)
-    services = services.drop('Services', axis=1)
-    services = services.drop_duplicates()
-    services = services.dropna()
+    #matched_service_temp = pd.DataFrame (matched_service_temp, columns = ['Services'])
+    #frames = [services_top, matched_service_temp]
+    #services = pd.concat(frames)
+    #services = services.drop('Services', axis=1)
+    #services = services.drop_duplicates()
+    #services = services.dropna()
 
-    matched_service = services.values.tolist()
-    matched_service = Extract(matched_service)
+    matched_service = matched_service_temp.values.tolist()
+    #matched_service = Extract(matched_service)
     st.write(matched_service)
 
 
