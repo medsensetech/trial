@@ -306,7 +306,7 @@ rates and outcomes if you were to design your program similarly.
     #matched_serv.columns = ['Services']
     #print(matched_serv)
 
-    services = remove_dup(results['Services'])
+    #services = remove_dup(results['Services'])
     serv = pd.DataFrame(services)
     serv.columns = ['Services']
 
