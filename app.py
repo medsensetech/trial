@@ -330,7 +330,7 @@ rates and outcomes if you were to design your program similarly.
     #print(sub_services)
     
     
-    channels = temp['Channel']
+    channels = top_result['Channel']
     st.write(results)
         
     st.write(channels)
@@ -479,7 +479,7 @@ rates and outcomes if you were to design your program similarly.
     closest_outcome = outcome/100
 
 
-    display_outcome = scale(matched_service, matched_serv, channels, chnls, closest_outcome)
+    display_outcome = scale(services, matched_serv, channels, chnls, closest_outcome)
     display_outcome = math.trunc((display_outcome*100))
 
     if submit_button2:
