@@ -441,6 +441,8 @@ rates and outcomes if you were to design your program similarly.
                 selection_channel_factors.append(0.4)
             else:
                 selection_channel_factors.append(1)
+                
+        st.write(selection_channel_factors)
 
         match_channel_factors = []
         for i in match_channel:
@@ -466,10 +468,10 @@ rates and outcomes if you were to design your program similarly.
                 match_channel_factors.append(0.4)
             else:
                 match_channel_factors.append(1)
-        print(selection_channel_factors)
-        print(match_channel_factors)
+        st.write(selection_channel_factors)
+        st.write(match_channel_factors)
         channel_scaling = max(selection_channel_factors)/max(match_channel_factors)
-        print(channel_scaling)
+        st.write(channel_scaling)
 
         new_outcome = new_outcome*channel_scaling
 
