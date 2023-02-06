@@ -212,7 +212,7 @@ rates and outcomes if you were to design your program similarly.
         return [item[0] for item in lst]
 
             
-    matched_service_temp = remove_dup(matched_service)
+    matched_service = remove_dup(matched_service)
     services_top = top_result['Services']
     #matched_service_temp = pd.DataFrame (matched_service_temp, columns = ['Services'])
     #frames = [services_top, matched_service_temp]
@@ -221,7 +221,7 @@ rates and outcomes if you were to design your program similarly.
     #services = services.drop_duplicates()
     #services = services.dropna()
 
-    matched_service = matched_service_temp.values.tolist()
+    #matched_service = matched_service_temp.values.tolist()
     #matched_service = Extract(matched_service)
     st.write(matched_service)
 
