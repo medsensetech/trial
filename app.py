@@ -448,7 +448,7 @@ rates and outcomes if you were to design your program similarly.
         subserv = st.multiselect(
         'Sub-services',
         ['Adherence service','AHPs services','App','Appointment preparation','Approval/Administrative support','Co-pay','Coaching/Counseling','Disposal','Dose support (inc. induction, FDO, titration)','Dose/inj training','Drug administraion/infusion (clinic)','Drug administraion/infusion (home)','e-diary/patient story','Effective HCP Appointments','Email/SMS/Mail','Free-Supply','Goal Setting','HCP/AHP training','Help-line (non-clinical)','Home Delivery/Order','Individual care plan','Insurance support','Logistics-travel','Medicine Usage Support','NA','Nurse/AHP assistance','Partner organisations','Patient care coordination','Patient communities-support','Patient-segmentation','Pharmacy supply','PSP-patient feedback','Psychological intervention','Reminders','Telemonitoring','Testing','Tools-Kits','Vouchers','Website','Welcome Pack', 'Other specify'],
-        sub_services)
+        subservices)
                                        
         chnls = st.multiselect(
         'Channels',
