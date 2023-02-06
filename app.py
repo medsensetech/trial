@@ -218,8 +218,10 @@ rates and outcomes if you were to design your program similarly.
     #frames = [services_top, matched_service_temp]
     #services = pd.concat(frames)
     #services = services.drop('Services', axis=1)
-    #services = services.drop_duplicates()
-    #services = services.dropna()
+    services = services.drop_duplicates()
+    services = services.dropna()
+    services = Extract(service)
+    st.write(services)
 
     #matched_service = matched_service_temp.values.tolist()
     #matched_service = Extract(matched_service)
