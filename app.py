@@ -347,7 +347,7 @@ rates and outcomes if you were to design your program similarly.
     #print(channels)
     chnls_top = pd.DataFrame(channels)
     chnls_top.columns = ['Channels']
-    chnls_top = channels_top.drop_duplicates()
+    chnls_top = channels.drop_duplicates()
     chnls_top = chnls_top.dropna()
     #channels = pd.DataFrame(channels)
     channels = chnls_top.values.tolist()
