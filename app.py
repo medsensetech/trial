@@ -400,6 +400,7 @@ rates and outcomes if you were to design your program similarly.
         
         
     def scale(match_services, selection_services, match_channel, selection_channel, outcome):
+        st.write(outcome)
         if len(selection_services) > len(match_services):
             n = len(selection_services) - len(match_services)
             service_scaling = (1.1)**n
@@ -410,6 +411,8 @@ rates and outcomes if you were to design your program similarly.
             service_scaling = (1.1)/n
         print(service_scaling)
         new_outcome = outcome*service_scaling
+        st.write(service_scaling)
+        st.write(new_outcome)
 
         selection_channel_factors = []
         for i in selection_channel:
@@ -463,7 +466,6 @@ rates and outcomes if you were to design your program similarly.
         print(selection_channel_factors)
         print(match_channel_factors)
         channel_scaling = max(selection_channel_factors)/max(match_channel_factors)
-        print()
         print(channel_scaling)
 
         new_outcome = new_outcome*channel_scaling
