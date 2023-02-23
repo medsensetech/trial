@@ -672,13 +672,6 @@ rates and outcomes if you were to design your program similarly.
             
             annual_growth = annual_growth/100
 
-            no_pts_new_1 = round(ca_3,1)
-            no_pts_new_2 = ca_4
-            no_pts_new_3 = (1+annual_growth)*no_pts_new_2
-            no_pts_new_4 = (1+annual_growth)*no_pts_new_3
-            no_pts_new_5 = (1+annual_growth)*no_pts_new_4
-            no_pts_new_total = no_pts_new_1 + no_pts_new_2 + no_pts_new_3 + no_pts_new_4 + no_pts_new_5
-            
             if adoption_rate1 > 0:
                 no_pts_new_1 = ca_1*(adoption_rate1/100)
                 no_pts_new_2 = ca_4
@@ -686,8 +679,16 @@ rates and outcomes if you were to design your program similarly.
                 no_pts_new_4 = (1+annual_growth)*no_pts_new_3
                 no_pts_new_5 = (1+annual_growth)*no_pts_new_4
                 no_pts_new_total = no_pts_new_1 + no_pts_new_2 + no_pts_new_3 + no_pts_new_4 + no_pts_new_5                
-            if adoption_rate1>0:
                 no_pts_ongoing_1 = ca_1*(adoption_rate1/100)
+            else:
+                no_pts_new_1 = round(ca_3,1)
+                no_pts_new_2 = ca_4
+                no_pts_new_3 = (1+annual_growth)*no_pts_new_2
+                no_pts_new_4 = (1+annual_growth)*no_pts_new_3
+                no_pts_new_5 = (1+annual_growth)*no_pts_new_4
+                no_pts_new_total = no_pts_new_1 + no_pts_new_2 + no_pts_new_3 + no_pts_new_4 + no_pts_new_5                
+                no_pts_ongoing_1 = ca_1*(adoption_rate1/100)
+                
             if proactive_support_window in ('Ongoing'):
                 no_pts_ongoing_2 = no_pts_new_1 + no_pts_ongoing_1*0.8
                 no_pts_ongoing_3 = no_pts_new_3 + no_pts_ongoing_2*0.8
