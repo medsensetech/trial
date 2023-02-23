@@ -654,7 +654,7 @@ rates and outcomes if you were to design your program similarly.
         services_cost_setup = a3 + b3 + c3 + d3 + e3 + f3 + g3
         annual_var_services_cost = a6 + b6 + c6 + d6 + e6 + f6 + g6
         
-        total_cost = program_costs + services_cost_setup + annual_var_services_cost
+        total_cost = a1+b1+c1 + a3 + b3 + c3 + d3 + e3 + f3 + g3 + ca_3*(a5+b5+c5+d5+e5+f5+g5)
 
         #Calculations
         if (ca_3 == 0):
@@ -761,7 +761,7 @@ rates and outcomes if you were to design your program similarly.
         col2.metric("Adoption Rate (Year 2) (%)", math.trunc((adoption_2)))
         col3.metric("Compliance Improvement", math.trunc((adoption_3)))
                     
-        st.metric(label="Total Estimated Cost", value=total_costs_1, delta=ca_8,
+        st.metric(label="Total Estimated Cost", value=total_cost, delta=ca_8,
         delta_color="off", help='Estimated cost compared to budget')
         
         st.write('Based on the selected design settings, with a program adoption rate of', math.trunc((adoption_1)),'%', 'the projected fnancials to help predict sustainability for this concept are as follows:')
