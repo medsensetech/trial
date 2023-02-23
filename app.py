@@ -668,7 +668,7 @@ rates and outcomes if you were to design your program similarly.
             ca_6 = 1
         adoption_3 = ca_5/(ca_6)
         
-        def ca(adoption_rate, annual_growth, additional_units):
+        def ca(adoption_rate1, adoption_rate2, annual_growth, additional_units):
             
             annual_growth = annual_growth/100
 
@@ -678,8 +678,16 @@ rates and outcomes if you were to design your program similarly.
             no_pts_new_4 = (1+annual_growth)*no_pts_new_3
             no_pts_new_5 = (1+annual_growth)*no_pts_new_4
             no_pts_new_total = no_pts_new_1 + no_pts_new_2 + no_pts_new_3 + no_pts_new_4 + no_pts_new_5
-
-            no_pts_ongoing_1 = round(ca_3,1)
+            
+            if adoption_rate1 > 0:
+                no_pts_new_1 = ca_1*(adoption_rate1/100)
+                no_pts_new_2 = ca_4
+                no_pts_new_3 = (1+annual_growth)*no_pts_new_2
+                no_pts_new_4 = (1+annual_growth)*no_pts_new_3
+                no_pts_new_5 = (1+annual_growth)*no_pts_new_4
+                no_pts_new_total = no_pts_new_1 + no_pts_new_2 + no_pts_new_3 + no_pts_new_4 + no_pts_new_5                
+            if adoption_rate1>0:
+                no_pts_ongoing_1 = ca_1*(adoption_rate1/100)
             if proactive_support_window in ('Ongoing'):
                 no_pts_ongoing_2 = no_pts_new_1 + no_pts_ongoing_1*0.8
                 no_pts_ongoing_3 = no_pts_new_3 + no_pts_ongoing_2*0.8
@@ -751,7 +759,7 @@ rates and outcomes if you were to design your program similarly.
 
             return ca_output
 
-        ca_output = ca(adoption_1, annual_growth, ca_6)
+        ca_output = ca(0, adoption_1, annual_growth, ca_6)
         submit_button3 = st.form_submit_button('Go')
 
     #Calculations
@@ -770,11 +778,12 @@ rates and outcomes if you were to design your program similarly.
         
     st.subheader('ALT1 Scenario')
     with st.form('Form4'):
-        c38, c39, c40 = st.columns(3)
-        alt1_ar = c38.number_input("ALT1 - Adoption Rate", value=adoption_1)
+        c38, c39, c40 = st.columns(4)
+        alt1_ar1 = c38.number_input("ALT1 - Adoption Rate (Year 1)", value=adoption_1)
+        alt1_ar2 = c38.number_input("ALT1 - Adoption Rate (Year 2 onwards)", value=adoption_1)
         alt1_ygp = c39.number_input("ALT1 - Yearly growth Program", value=annual_growth)
         alt1_au = c40.number_input("ALT1 - Additional units per pt per yr", value=ca_6)
-        alt1_output = ca(alt1_ar, alt1_ygp, alt1_au)
+        alt1_output = ca(alt1_ar1, alt1_ar2, alt1_ygp, alt1_au)
         submit_button4 = st.form_submit_button('Go')
     if submit_button4:
         st.table(alt1_output)
