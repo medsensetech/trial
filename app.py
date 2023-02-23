@@ -623,11 +623,11 @@ rates and outcomes if you were to design your program similarly.
         c14, c15, c16, c17, c18, c19, c20 = st.columns(7)
         a4 = c14.number_input("Program Management ", value=20000)
         b4 = c15.number_input("In-person & Telephone (clinical) ", value=20000)
-        c3 = c16.number_input("Welcome pack ", value=0)
-        d3 = c17.number_input("Website ", value=15000)
-        e3 = c18.number_input("Email/SMS/Mail ", value=5000)
-        f3 = c19.number_input("Partner organisations ", value=2500)
-        g3 = c20.number_input("Other ", value=0)
+        c4 = c16.number_input("Welcome pack ", value=0)
+        d4 = c17.number_input("Website ", value=15000)
+        e4 = c18.number_input("Email/SMS/Mail ", value=5000)
+        f4 = c19.number_input("Partner organisations ", value=2500)
+        g4 = c20.number_input("Other ", value=0)
         
         st.write('Annual fee per patient - variable')
         c21, c22, c23, c24, c25, c26, c27 = st.columns(7)
@@ -693,38 +693,8 @@ rates and outcomes if you were to design your program similarly.
 
             no_pts_ongoing_total = no_pts_ongoing_1 + no_pts_ongoing_2 + no_pts_ongoing_3 + no_pts_ongoing_4 + no_pts_ongoing_5
 
-            fixed_setup_costs_1 = round(100000,1)
-            fixed_setup_costs_2 = 36000
-            for i in chnls2:
-                if i in ('Inperson'):
-                    fixed_setup_costs_1 += 60000
-                    fixed_setup_costs_2 += 20000
-                elif i in ('Program management'):
-                    fixed_setup_costs_1 += 20000
-                    fixed_setup_costs_2 += 20000
-                elif i in ('Telephone (clinical)'):
-                    fixed_setup_costs_1 += 30000
-                    fixed_setup_costs_2 += 10000
-                elif i in ('Website'):
-                    fixed_setup_costs_1 += 30000
-                    fixed_setup_costs_2 += 15000
-                elif i in ('Email/SMS/Mail'):
-                    fixed_setup_costs_1 += 5000
-                    fixed_setup_costs_2 += 5000
-                elif i in ('Telephone (non-clinical)'):
-                    fixed_setup_costs_1 += 10000
-                    fixed_setup_costs_2 += 5000
-                elif i in ('App'):
-                    fixed_setup_costs_1 += 100000
-                    fixed_setup_costs_2 += 100000
-                elif i in ('Partner organisations'):
-                    fixed_setup_costs_1 += 5000
-                    fixed_setup_costs_2 += 2500
-                elif i in ('Third-party tool/software'):
-                    fixed_setup_costs_1 += 5000
-                    fixed_setup_costs_2 += 2500
-
-
+            fixed_setup_costs_1 = a1+b1+c1+a3+b3+c3+d3+e3+f3+g3
+            fixed_setup_costs_2 = a2+b2+c2+a4+b4+c4+d4+e4+f4+g4
             fixed_setup_costs_3 = fixed_setup_costs_2
             fixed_setup_costs_4 = fixed_setup_costs_2
             fixed_setup_costs_5 = fixed_setup_costs_2
@@ -732,62 +702,13 @@ rates and outcomes if you were to design your program similarly.
 
 
         #Change logic - look at services cost table
-            var_costs_1 = 1
-            var_costs_2 = 1
-            var_costs_3 = 1
-            var_costs_4 = 1
-            var_costs_5 = 1
-            chnls_list = chnls2
-            chnls_list = [item for sublist in chnls_list for item in sublist]
+            var_base = a5+b5+c5+d5+e5+f5+g5
+            var_costs_1 = var_base*no_pts_ongoing_1
+            var_costs_2 = var_base*no_pts_ongoing_2
+            var_costs_3 = var_base*no_pts_ongoing_3
+            var_costs_4 = var_base*no_pts_ongoing_4
+            var_costs_5 = var_base*no_pts_ongoing_5
 
-            print(chnls_list)
-            for i in chnls_list:
-                if i in ('Program management'):
-                    var_costs_1 += 50*no_pts_ongoing_1
-                    var_costs_2 += 50*no_pts_ongoing_2
-                    var_costs_3 += 50*no_pts_ongoing_3
-                    var_costs_4 += 50*no_pts_ongoing_4
-                    var_costs_5 += 50*no_pts_ongoing_5
-                elif i in ('Inperson'):
-                    var_costs_1 += 600*no_pts_ongoing_1
-                    print(var_costs_1)
-                    var_costs_2 += 600*no_pts_ongoing_2
-                    var_costs_3 += 600*no_pts_ongoing_3
-                    var_costs_4 += 600*no_pts_ongoing_4
-                    var_costs_5 += 600*no_pts_ongoing_5
-                elif i in ('Telephone (clinical)'):
-                    var_costs_1 += 200*no_pts_ongoing_1
-                    var_costs_2 += 200*no_pts_ongoing_2
-                    var_costs_3 += 200*no_pts_ongoing_3
-                    var_costs_4 += 200*no_pts_ongoing_4
-                    var_costs_5 += 200*no_pts_ongoing_5
-                elif i in ('Welcome Pack'):
-                    var_costs_1 += 150*no_pts_ongoing_1
-                    var_costs_2 += 150*no_pts_ongoing_2
-                    var_costs_3 += 150*no_pts_ongoing_3
-                    var_costs_4 += 150*no_pts_ongoing_4
-                    var_costs_5 += 150*no_pts_ongoing_5
-                elif i in ('Email/SMS/Mail'):
-                    var_costs_1 += 10*no_pts_ongoing_1
-                    var_costs_2 += 10*no_pts_ongoing_2
-                    var_costs_3 += 10*no_pts_ongoing_3
-                    var_costs_4 += 10*no_pts_ongoing_4
-                    var_costs_5 += 10*no_pts_ongoing_5
-                elif i in ('Telephone (non-clinical)'):
-                    var_costs_1 += 100*no_pts_ongoing_1
-                    var_costs_2 += 100*no_pts_ongoing_2
-                    var_costs_3 += 100*no_pts_ongoing_3
-                    var_costs_4 += 100*no_pts_ongoing_4
-                    var_costs_5 += 100*no_pts_ongoing_5
-                elif i in ('Third-party tool/software'):
-                    var_costs_1 += 100*no_pts_ongoing_1
-                    var_costs_2 += 100*no_pts_ongoing_2
-                    var_costs_3 += 100*no_pts_ongoing_3
-                    var_costs_4 += 100*no_pts_ongoing_4
-                    var_costs_5 += 100*no_pts_ongoing_5
-            var_costs_1 = round(var_costs_1,2)
-            var_costs_5 = round(var_costs_5,2)
-            print(var_costs_1)
             var_costs_total = var_costs_1 + var_costs_2 + var_costs_3 + var_costs_4 + var_costs_5
 
             total_costs_1 = round(fixed_setup_costs_1 + var_costs_1,1)
