@@ -779,11 +779,11 @@ rates and outcomes if you were to design your program similarly.
         
     st.subheader('ALT1 Scenario')
     with st.form('Form4'):
-        c38, c39, c40 = st.columns(4)
+        c38, c39, c40, c41 = st.columns(4)
         alt1_ar1 = c38.number_input("ALT1 - Adoption Rate (Year 1)", value=adoption_1)
-        alt1_ar2 = c38.number_input("ALT1 - Adoption Rate (Year 2 onwards)", value=adoption_1)
-        alt1_ygp = c39.number_input("ALT1 - Yearly growth Program", value=annual_growth)
-        alt1_au = c40.number_input("ALT1 - Additional units per pt per yr", value=ca_6)
+        alt1_ar2 = c39.number_input("ALT1 - Adoption Rate (Year 2 onwards)", value=adoption_1)
+        alt1_ygp = c40.number_input("ALT1 - Yearly growth Program", value=annual_growth)
+        alt1_au = c41.number_input("ALT1 - Additional units per pt per yr", value=ca_6)
         alt1_output = ca(alt1_ar1, alt1_ar2, alt1_ygp, alt1_au)
         submit_button4 = st.form_submit_button('Go')
     if submit_button4:
