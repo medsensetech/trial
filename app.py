@@ -707,7 +707,7 @@ rates and outcomes if you were to design your program similarly.
             fixed_setup_costs_3 = fixed_setup_costs_2
             fixed_setup_costs_4 = fixed_setup_costs_2
             fixed_setup_costs_5 = fixed_setup_costs_2
-            fixed_setup_costs_total = fixed_setup_costs_2
+            fixed_setup_costs_total = fixed_setup_costs_1 + fixed_setup_costs_2 + fixed_setup_costs_3 + fixed_setup_costs_4 + fixed_setup_costs_5
 
 
         #Change logic - look at services cost table
