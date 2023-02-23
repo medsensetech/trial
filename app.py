@@ -687,8 +687,7 @@ rates and outcomes if you were to design your program similarly.
                 no_pts_new_4 = (1+annual_growth)*no_pts_new_3
                 no_pts_new_5 = (1+annual_growth)*no_pts_new_4
                 no_pts_new_total = no_pts_new_1 + no_pts_new_2 + no_pts_new_3 + no_pts_new_4 + no_pts_new_5                
-                no_pts_ongoing_1 = ca_1*(adoption_rate1/100)
-                st.write(no_pts_ongoing_1)
+                no_pts_ongoing_1 = no_pts_new_1
                 
             if proactive_support_window in ('Ongoing'):
                 no_pts_ongoing_2 = no_pts_new_1 + no_pts_ongoing_1*0.8
