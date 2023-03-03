@@ -749,7 +749,7 @@ rates and outcomes if you were to design your program similarly.
             cumulative_total = cumulative_1 + cumulative_2 + cumulative_3 + cumulative_4 + cumulative_5 
 
             d = {'Items': ['No. pts new', 'No. pts ongoing', 'Fixed setup costs', 'Variable costs', 'Total costs', 'Revenue - improved compliance', 'Net income/loss', 'Cumulative income/loss'], 
-            'Year 1': [no_pts_new_1, no_pts_ongoing_1, fixed_setup_costs_1, var_costs_1, total_costs_1, rev_1, net_1, cumulative_1],
+            'Year 1': [int(no_pts_new_1), no_pts_ongoing_1, fixed_setup_costs_1, var_costs_1, total_costs_1, rev_1, net_1, cumulative_1],
             'Year 2': [no_pts_new_2, no_pts_ongoing_2, fixed_setup_costs_2, var_costs_2, total_costs_2, rev_2, net_2, cumulative_2],
             'Year 3': [no_pts_new_3, no_pts_ongoing_3, fixed_setup_costs_3, var_costs_3, total_costs_3, rev_3, net_3, cumulative_3],
             'Year 4': [no_pts_new_4, no_pts_ongoing_4, fixed_setup_costs_4, var_costs_4, total_costs_4, rev_4, net_4, cumulative_4],
