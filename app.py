@@ -758,7 +758,7 @@ rates and outcomes if you were to design your program similarly.
             
 
             ca_output = pd.DataFrame(data=d)
-            st.dataframe(ca_output.style.format("{:%}"))
+            st.dataframe(ca_output.style.format("{:.0%}"))
 
 
             return ca_output
