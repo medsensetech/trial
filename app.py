@@ -756,7 +756,7 @@ rates and outcomes if you were to design your program similarly.
             'Year 5': [no_pts_new_5, no_pts_ongoing_5, fixed_setup_costs_5, var_costs_5, total_costs_5, rev_5, net_5, cumulative_5],
             'Total': [no_pts_new_total, no_pts_ongoing_total, fixed_setup_costs_total, var_costs_total, total_costs_total, rev_total, net_total, cumulative_total]}
             
-            pd.set_option('precision', 0)
+            pd.set_option('display.precision', 0)
 
             ca_output = pd.DataFrame(data=d)
 
