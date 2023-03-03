@@ -758,6 +758,11 @@ rates and outcomes if you were to design your program similarly.
             
             ca_output = pd.DataFrame(data=d)
             ca_output["Year 1"] = ca_output["Year 1"].astype(int)
+            ca_output["Year 2"] = ca_output["Year 2"].astype(int)
+            ca_output["Year 3"] = ca_output["Year 3"].astype(int)
+            ca_output["Year 4"] = ca_output["Year 4"].astype(int)
+            ca_output["Year 5"] = ca_output["Year 5"].astype(int)
+            ca_output["Total"] = ca_output["Total"].astype(int)
 
 
             return ca_output
