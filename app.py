@@ -757,8 +757,7 @@ rates and outcomes if you were to design your program similarly.
             'Total': [no_pts_new_total, no_pts_ongoing_total, fixed_setup_costs_total, var_costs_total, total_costs_total, rev_total, net_total, cumulative_total]}
             
             ca_output = pd.DataFrame(data=d)
-            for col in ca_output.columns:
-                st.write(col)
+            ca_output["Year 1"] = ca_output["Year 1"].astype(int)
 
 
             return ca_output
