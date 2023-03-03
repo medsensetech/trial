@@ -758,7 +758,7 @@ rates and outcomes if you were to design your program similarly.
             
             ca_output = pd.DataFrame(data=d)
             for col in ca_output.columns:
-                print(col)
+                st.write(col)
 
 
             return ca_output
