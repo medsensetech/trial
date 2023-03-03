@@ -757,7 +757,7 @@ rates and outcomes if you were to design your program similarly.
             'Total': [no_pts_new_total, no_pts_ongoing_total, fixed_setup_costs_total, var_costs_total, total_costs_total, rev_total, net_total, cumulative_total]}
             
             ca_output = pd.DataFrame(data=d)
-            ca_output["No. pts new"] = df["No. pts new"].astype(int)
+            ca_output["No. pts new"] = ca_output["No. pts new"].astype(int)
 
 
             return ca_output
